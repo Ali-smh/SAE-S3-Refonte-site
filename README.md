@@ -1,1 +1,2 @@
-Refonte du site alcool ecoute dans le cadre d'un projet universitaire
+# SAE-S3 Refonte d'un site web
+## Refonte du site web Alcool Ecoute (https://www.alcoolecoute.com/)
