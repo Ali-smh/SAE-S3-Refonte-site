@@ -1,0 +1,57 @@
+/*GLOBAL*/
+
+
+body{
+    margin: auto;
+}
+
+/**************************/
+
+/* HEADER */
+
+.header{
+    align-items: center;
+    font-family: Lato, serif;
+    display: flex;
+    width: 100%;
+    height: 4.5em;
+    background-color: white;
+}
+
+.logo{
+    margin-left: 1.3em;
+    height: 4em;
+}
+
+.navbar ul li{
+    font-family: "Lato", sans-serif;
+    display: inline;
+    margin-left: 1.5em;
+}
+
+.navbar ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+/**************************/
+
+/*SLOGAN DIV*/
+
+.slogan{
+    display: flex;
+    background-color: aqua;
+    height: 30em;
+}
+
+.left{
+    background-color: red;
+    width: 56%;
+    height: 100%;
+}
+
+.right{
+    background-image: url("../img/pexels-ingo-609771.jpg");
+    height: 100%;
+    width: 44%;
+}
