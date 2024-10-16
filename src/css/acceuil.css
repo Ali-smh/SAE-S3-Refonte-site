@@ -1,8 +1,12 @@
 /*GLOBAL*/
 
-
 body{
     margin: auto;
+}
+
+button{
+    padding: 18px;
+    border: none;
 }
 
 /**************************/
@@ -20,7 +24,7 @@ body{
 
 .logo{
     margin-left: 1.3em;
-    height: 4em;
+    height: 3em;
 }
 
 .navbar ul li{
@@ -45,13 +49,140 @@ body{
 }
 
 .left{
-    background-color: red;
+    font-family: Lato, serif;
     width: 56%;
     height: 100%;
+    background-color: #F5F5F5;
+}
+
+.left .content{
+    margin-left: 2em;
+}
+
+.left .title{
+    font-size: 3.2em;
+    color: #333333;
+}
+
+.left p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.left button{
+    font-family: "Lato", sans-serif;
+    background-color: #064789;
+    color: white;
 }
 
 .right{
-    background-image: url("../img/pexels-ingo-609771.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-ingo-609771.jpg");
     height: 100%;
     width: 44%;
+}
+
+/**************************/
+
+/*PRESENTATION DIV*/
+
+.presentation{
+    margin-top: 10em;
+    width: 77%;
+}
+
+.presentation  .title{
+    color: #3A5A40;
+    font-size: 3em;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    bottom: 0.1em;
+}
+
+.who-are-we{
+    background-color: #EBF2FA;
+    margin-bottom: 10%;
+}
+
+.who-are-we .content{
+    position: relative;
+    margin-left: 4%;
+    bottom: 1.8em;
+}
+
+.presentation p{
+    font-size: 1.2em;
+    font-family: "Ledger", serif;
+}
+
+.presentation a{
+    font-family: "Ledger", serif;
+    font-size: 1.2em;
+    color: #064789;
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+}
+
+.what-we-do{
+    background-color: #EBF2FA;
+    margin-left: 30%;
+    width: 99.8%;
+}
+
+.what-we-do .content{
+    position: relative;
+    bottom: 1.8em;
+    margin-left: 5%;
+}
+
+.what-we-do .title{
+    margin-left: 28%;
+}
+
+/**************************/
+
+/*NOS-ASSOS DIV*/
+
+.nos-associations{
+    font-family: "Lato", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% auto;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-vividcafe-681335.jpg");
+    filter: brightness(0.8);
+}
+
+.nos-associations .title{
+    font-size: 3.2em;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.nos-associations p{
+    font-family: "Ledger", serif;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.discover{
+    background-color: #064789;
+    color: white;
+    font-size: 1em;
+    width: 130px;
+}
+
+.nos-associations .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
 }
