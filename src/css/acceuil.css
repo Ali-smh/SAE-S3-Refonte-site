@@ -186,3 +186,73 @@ button{
     align-items: center;
     margin-bottom: 1em;
 }
+
+/**************************/
+
+/*ACTUALITES DIV*/
+
+.actualites{
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.actualites h2{
+    font-size: 3em;
+    border-bottom: 3px solid black;
+}
+
+.actualites .content{
+    display: flex;
+    margin-top: 0.5em;
+    width: 95%;
+    height: 25em;
+    justify-content: space-between;
+}
+
+.actu{
+    width: 28%;
+    background-color: #F2F2F2;
+}
+
+.actu .img{
+    display: flex;
+    width: 100%;
+    height: 45%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.actu .title{
+    font-family: "League Spartan", "sans-serif";
+    text-transform: uppercase;
+    font-size: 0.87em;
+    font-weight: bold;
+}
+
+.actu .text{
+    font-weight: 300;
+    font-size: 0.85em;
+}
+
+.actu .description{
+    margin-left: 1em;
+    margin-top: 2.5em;
+}
+
+#actu-1 .img{
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-fauxels-3184418.jpg");
+}
+
+#actu-2 .img{
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-didsss-2675061.jpg");
+}
+
+#actu-3 .img{
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-benni-fish-40038242-12418421.jpg");
+}
+
