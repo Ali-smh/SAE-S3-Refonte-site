@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #007BFF;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.tabs {
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+    background-color: #80bfff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabs .tab {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 10px 50px;
+}
+
+.tabs .tab.active {
+    background-color: transparent;
+    border-bottom: 3px solid white;
+}
+
+.tabs .tab:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.headline {
+    text-align: center;
+    padding: 90px 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.headline h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 3px solid #333;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Cards container */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    background-color: #e6f2ff;
+}
+
+.cardsprincipal, .cardssecondaire {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 15px 0;
+    color: #007BFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.prev-btn, .next-btn {
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: #333;
+}
+
+/* Section événements */
+.events-section {
+    padding: 40px 0;
+    background-color: #FBF8F0;
+}
+
+.events-title {
+    text-align: center;
+    padding: 120px 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+.events-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+}
+
+.events {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event .year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #F2F2F2;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 120px;
+    text-align: center;
+}
+
+.event p {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.event-container {
+    background-color: #FBF8F0;
+    padding: 40px 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logos img {
+    width: 80px;
+    margin: 0 15px;
+}
