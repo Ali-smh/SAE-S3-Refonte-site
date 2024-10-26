@@ -23,7 +23,7 @@ button{
 }
 
 .logo{
-    margin-left: 1.3em;
+    margin-left: 2em;
     height: 3em;
 }
 
@@ -34,6 +34,7 @@ button{
 }
 
 .navbar ul li a{
+    font-size: 0.9em;
     color: black;
     text-decoration: none;
 }
@@ -44,13 +45,12 @@ button{
 
 .slogan{
     display: flex;
-    background-color: aqua;
     height: 30em;
 }
 
 .left{
     font-family: Lato, serif;
-    width: 56%;
+    width: 54%;
     height: 100%;
     background-color: #F5F5F5;
 }
@@ -81,7 +81,7 @@ button{
     background-position: center;
     background-image: url("/SAE-S3-Refonte-site/src/img/pexels-ingo-609771.jpg");
     height: 100%;
-    width: 44%;
+    width: 46%;
 }
 
 /**************************/
@@ -151,14 +151,13 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10% auto;
+    margin: 7em auto auto auto;
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
-    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-vividcafe-681335.jpg");
-    filter: brightness(0.8);
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-vividcafe.jpg");
 }
 
 .nos-associations .title{
@@ -255,4 +254,69 @@ button{
 #actu-3 .img{
     background-image: url("/SAE-S3-Refonte-site/src/img/pexels-benni-fish-40038242-12418421.jpg");
 }
+
+.more-news{
+    font-family: "Lato", sans-serif;
+    margin-top: 2em;
+    background-color: white;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+/**************************/
+
+/*FOOTER*/
+
+footer{
+    font-family: "Lato", sans-serif;
+    margin-top: 10em;
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+footer .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+footer .asso-public-util{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+
+footer .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+footer p{
+    margin-top: 2em;
+    font-weight: 300;
+}
+
+.asso, .public-util{
+    font-weight: bold;
+    margin: 0;
+}
+
+.partners{
+    margin-top: 2em;
+}
+
+.partners img{
+    margin-right: 2em;
+}
+
+.desc p{
+    margin: 0;
+}
+/**************************/
+
 
