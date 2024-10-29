@@ -11,5 +11,5 @@ une représentation des usagers interassociative forte.
 ### Objectif
 « France Assos Santé » nous sollicite car certains sites de ses associations membres ne sont plus de 
 qualité suffisante et nécessiterait une refonte à court terme pour remplir pleinement son rôle. Le but est de
-choisir un site à refaire parmis les 93 sites d'associations disponibles.
+choisir un site à refaire (4 pages significatives) parmis les 93 sites d'associations disponibles.
 Le site web que nous avons choisi de refaire est celui de l'association Alcool Ecoute (https://www.alcoolecoute.com).
