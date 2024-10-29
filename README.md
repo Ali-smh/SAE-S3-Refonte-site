@@ -1,2 +1,3 @@
 # SAE-S3 Refonte d'un site web
 ### Refonte du site web Alcool Ecoute (https://www.alcoolecoute.com/)
+![alt text](https://www.bing.com/images/search?view=detailV2&ccid=Evx1TJC5&id=1177FF39226EAD08178E55851D639D4DECD57923&thid=OIP.Evx1TJC5SCrem366fKGfnAAAAA&mediaurl=https%3a%2f%2fcommunication-active-normandie.fr%2fwp-content%2fuploads%2f2017%2f11%2falcool-ecoute.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.12fc754c90b9482ade9b7eba7ca19f9c%3frik%3dI3nV7E2dYx2FVQ%26pid%3dImgRaw%26r%3d0&exph=250&expw=250&q=alcool+ecoute&simid=608010307363496688&FORM=IRPRST&ck=736209D517E63240948314EC3FE9EAB8&selectedIndex=0&itb=0&ajaxhist=0&ajaxserp=0)
