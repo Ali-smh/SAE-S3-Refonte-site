@@ -1,0 +1,50 @@
+footer{
+    font-family: "Lato", sans-serif;
+    margin-top: 10em;
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+footer .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+footer .asso-public-util{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+
+footer .desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+footer p{
+    margin-top: 2em;
+    font-weight: 300;
+}
+
+.asso, .public-util{
+    font-weight: bold;
+    margin: 0;
+}
+
+.partners{
+    margin-top: 2em;
+}
+
+.partners img{
+    margin-right: 2em;
+}
+
+.desc p{
+    margin: 0;
+}

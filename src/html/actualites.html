@@ -4,9 +4,87 @@
     <meta charset="UTF-8">
     <title>Actualites</title>
     <link rel="icon" href="/src/img/logos/logo_alcool_ecoute.png">
-    <a href="http://">fefefe</a>
+    <link href ="/src/css/actualites.css" rel="stylesheet">
+    <script src="../js/partialsLoader.js" defer></script>
+    <script src="../js/script.js" defer></script>
 </head>
 <body>
+    <header></header>
+    <section class="tabs">
+        <a href="#" class="tab active" id="actualite-tab">Actualité à la Une</a>
+        <a href="#" class="tab" id="evenements-tab">Événements</a>
+    </section>
 
+
+    <section id="actualite" class="section">
+        <div class="headline">
+            <h1>Actualité à la Une</h1>
+        </div>
+
+        <section class="cards-container">
+
+            <section class="cardsprincipal">
+                <button class="prev-btn">❮</button>
+                <div class="cards main-cards">
+                    <div class="card">
+                        <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
+                        <h3>A LA RECHERCHE DE BENEVOLE</h3>
+                    </div>
+                    <div class="card">
+                        <img src="/src/img/partenariats.jpg" alt="De nouveaux partenariats">
+                        <h3>DE NOUVEAUX PARTENARIATS</h3>
+                    </div>
+                    <div class="card">
+                        <img src="/src/img/president.jpg" alt="Changement de président">
+                        <h3>CHANGEMENT DE PRESIDENT</h3>
+                    </div>
+                </div>
+                <button class="next-btn">❯</button>
+            </section>
+
+
+            <section class="cardssecondaire">
+                <div class="cards secondary-cards">
+                    <div class="card">
+                        <img src="/src/img/president.jpg" alt="Changement de président">
+                        <h3>CHANGEMENT DE PRESIDENT</h3>
+                    </div>
+                    <div class="card">
+                        <img src="/src/img/president.jpg" alt="Changement de président">
+                        <h3>CHANGEMENT DE PRESIDENT</h3>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section class="events-section">
+        <div class="events-title">
+            <h1>Événements</h1>
+        </div>
+
+        <div class="events">
+            <div class="event">
+                <div class="year">2020</div>
+                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
+            </div>
+
+            <div class="event">
+                <div class="year">2019</div>
+                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
+            </div>
+
+            <div class="event">
+                <div class="year">2018</div>
+                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
+            </div>
+
+            <div class="event">
+                <div class="year">2017</div>
+                <p>Participation à la journée internationale du SAF, le 06 septembre 2017 à Paris.</p>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
 </body>
 </html>
