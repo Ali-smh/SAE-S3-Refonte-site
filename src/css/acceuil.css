@@ -1,7 +1,7 @@
 /*GLOBAL*/
 
 body{
-    margin: auto;
+    margin: 0;
 }
 
 button{
@@ -11,9 +11,6 @@ button{
 
 /**************************/
 
-/* HEADER */
-
-/**************************/
 
 /*SLOGAN DIV*/
 
@@ -236,10 +233,6 @@ button{
     font-weight: bold;
     border: 2px solid black;
 }
-
-/**************************/
-
-/*FOOTER*/
 
 /**************************/
 

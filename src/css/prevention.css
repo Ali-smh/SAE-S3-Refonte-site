@@ -1,0 +1,108 @@
+/*GLOBAL*/
+
+body{
+    margin: 0;
+}
+
+button{
+    padding: 18px;
+    border: none;
+}
+
+/**************************/
+
+/*UNDERSTAND-AND-PREVENT*/
+
+.understand-and-prevent{
+    font-family: Lato, serif;
+    display: flex;
+    margin-top: 5em;
+}
+
+.understand-and-prevent .text{
+    margin-left: 8em;
+}
+
+.understand-and-prevent .title{
+    font-size: 2.8em;
+}
+
+.understand-and-prevent p{
+    font-weight: 300;
+    font-size: 1.6em;
+}
+
+.understand-and-prevent button{
+    font-family: Lato, serif;
+    font-size: 0.9em;
+    margin-top: 2.5em;
+    background-color: #FFAA00;
+    font-weight: bold;
+}
+
+.alcool-img-1, .alcool-img-2 {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.alcool-img-1{
+    width: 15em;
+    height: 14em;
+    right: 20em;
+    bottom: 9em;
+    z-index: 2;
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-anete-lusina-5238425.jpg");
+    background-size: cover;
+}
+
+.alcool-img-2{
+    height: 18em;
+    width: 18em;
+    right: 8em;
+    bottom: 15em;
+    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-bohlemedia-1089930.jpg");
+    background-size: 100%;
+}
+
+/**************************/
+
+/*ARE-YOU-ADDICTED*/
+
+.are-you-addicted{
+    margin-top: 10em;
+    margin-left: 8em;
+}
+
+.are-you-addicted .title{
+    font-family: Lato, serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.are-you-addicted > p{
+    font-family: "Ledger", serif;
+}
+
+.steps{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10em;
+}
+
+.step{
+    width: 20%;
+}
+
+.step h4{
+    font-family: "League Gothic";
+    font-size: 4em;
+    color: #064789;
+    margin-bottom: -0.15em;
+    border-bottom: 3px solid black;
+}
+
+.step p{
+    font-family: Lato, serif;
+    font-size: 1.05em;
+}

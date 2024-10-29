@@ -2,8 +2,6 @@ const header = document.querySelector("header")
 const footer =  document.querySelector("footer")
 const head = document.head
 
-console.log(header)
-
 function loadHeader(){
     fetch("/src/partials/html/header.html")
         .then(response => response.text())
