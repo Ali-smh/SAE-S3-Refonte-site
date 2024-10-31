@@ -1,6 +1,9 @@
 footer{
+    position: sticky;
+    top: 100vh;
     font-family: "Lato", sans-serif;
-    margin-top: 10em;
+    position: sticky;
+    bottom: 0;
     width: 100%;
     background-color: #F2F2F2;
 }
