@@ -2,89 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Actualites</title>
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="/src/css/acceuil.css">
     <link rel="icon" href="/src/img/logos/logo_alcool_ecoute.png">
-    <link href ="/src/css/actualites.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ledger&display=swap" rel="stylesheet">
     <script src="../js/partialsLoader.js" defer></script>
-    <script src="../js/script.js" defer></script>
+    <link rel="stylesheet" href="/src/css/actualites.css">
+    <script src="/src/js/script.js" defer></script>
+    <script src="/src/js/carousel.js" defer></script>
+    <script src="/src/js/detailActu.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <section class="tabs">
-        <a href="#" class="tab active" id="actualite-tab">Actualité à la Une</a>
-        <a href="#" class="tab" id="evenements-tab">Événements</a>
-    </section>
 
+<header></header>
 
-    <section id="actualite" class="section">
-        <div class="headline">
-            <h1>Actualité à la Une</h1>
-        </div>
+<section class="tabs">
+    <a href="#" class="tab active" id="actualite-tab">Actualité à la Une</a>
+    <a href="#" class="tab" id="evenements-tab">Événements</a>
+</section>
 
-        <section class="cards-container">
+<section id="actualite" class="section">
+    <div class="headline">
+        <h1>Actualité à la Une</h1>
+    </div>
 
-            <section class="cardsprincipal">
-                <button class="prev-btn">❮</button>
-                <div class="cards main-cards">
-                    <div class="card">
-                        <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
-                        <h3>A LA RECHERCHE DE BENEVOLE</h3>
-                    </div>
-                    <div class="card">
-                        <img src="/src/img/partenariats.jpg" alt="De nouveaux partenariats">
-                        <h3>DE NOUVEAUX PARTENARIATS</h3>
-                    </div>
-                    <div class="card">
-                        <img src="/src/img/president.jpg" alt="Changement de président">
-                        <h3>CHANGEMENT DE PRESIDENT</h3>
-                    </div>
+    <section class="cards-container">
+        <section class="cardsprincipal">
+            <button class="prev-btn">❮</button>
+            <div class="cards main-cards">
+                <div class="card" data-description="Détails sur la recherche de bénévoles">
+                    <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
+                    <h3>A LA RECHERCHE DE BENEVOLE</h3>
                 </div>
-                <button class="next-btn">❯</button>
-            </section>
-
-
-            <section class="cardssecondaire">
-                <div class="cards secondary-cards">
-                    <div class="card">
-                        <img src="/src/img/president.jpg" alt="Changement de président">
-                        <h3>CHANGEMENT DE PRESIDENT</h3>
-                    </div>
-                    <div class="card">
-                        <img src="/src/img/president.jpg" alt="Changement de président">
-                        <h3>CHANGEMENT DE PRESIDENT</h3>
-                    </div>
+                <div class="card" data-description="Détails sur les nouveaux partenariats">
+                    <img src="/src/img/partenariats.jpg" alt="De nouveaux partenariats">
+                    <h3>DE NOUVEAUX PARTENARIATS</h3>
                 </div>
-            </section>
+                <div class="card" data-description="Détails sur le changement de président">
+                    <img src="/src/img/president.jpg" alt="Changement de président">
+                    <h3>CHANGEMENT DE PRESIDENT</h3>
+                </div>
+            </div>
+            <button class="next-btn">❯</button>
+        </section>
+
+        <section class="cardssecondaire">
+            <div class="cards secondary-cards">
+                <div class="card" data-description="Détails supplémentaires sur le changement de président">
+                    <img src="/src/img/president.jpg" alt="Changement de président">
+                    <h3>CHANGEMENT DE PRESIDENT</h3>
+                </div>
+                <div class="card" data-description="Appel à de nouveaux bénévoles pour l'association">
+                    <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
+                    <h3>A LA RECHERCHE DE BENEVOLE</h3>
+                </div>
+            </div>
         </section>
     </section>
+</section>
 
-    <section class="events-section">
-        <div class="events-title">
-            <h1>Événements</h1>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modal-title">Titre de l'actualité</h2>
+        <p id="modal-description">Description détaillée de l'actualité sélectionnée.</p>
+    </div>
+</div>
+
+
+<section class="events-section">
+    <div class="events-title">
+        <h1>Événements</h1>
+    </div>
+
+    <div class="events">
+        <div class="event">
+            <div class="year">2020</div>
+            <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
         </div>
 
-        <div class="events">
-            <div class="event">
-                <div class="year">2020</div>
-                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
-            </div>
-
-            <div class="event">
-                <div class="year">2019</div>
-                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
-            </div>
-
-            <div class="event">
-                <div class="year">2018</div>
-                <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
-            </div>
-
-            <div class="event">
-                <div class="year">2017</div>
-                <p>Participation à la journée internationale du SAF, le 06 septembre 2017 à Paris.</p>
-            </div>
+        <div class="event">
+            <div class="year">2019</div>
+            <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
         </div>
-    </section>
-    <footer></footer>
+
+        <div class="event">
+            <div class="year">2018</div>
+            <p>Aide et soutien aux personnes en difficulté avec l'alcool et autres produits psycho-actifs.</p>
+        </div>
+
+        <div class="event">
+            <div class="year">2017</div>
+            <p>Participation à la journée internationale du SAF, le 06 septembre 2017 à Paris.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<footer> </footer>
+
 </body>
 </html>

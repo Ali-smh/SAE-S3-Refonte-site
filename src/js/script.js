@@ -1,21 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
+document.addEventListener("DOMContentLoaded", function () {
+    const onglets = document.querySelectorAll(".tab");
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            e.preventDefault();
+    onglets.forEach(function (onglet) {
+        onglet.addEventListener("click", function (event) {
+            event.preventDefault();
 
-            const targetSection = document.querySelector(`#${tab.id.replace('-tab', '')}`);
+            const cibleId = onglet.getAttribute("id");
+            let sectionCible = "";
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            if (cibleId === "actualite-tab") {
+                sectionCible = document.querySelector("#actualite");
+            } else if (cibleId === "evenements-tab") {
+                sectionCible = document.querySelector(".events-section");
             }
 
-            // Gérer l'activation de l'onglet
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+            if (sectionCible) {
+                window.scrollTo({
+                    top: sectionCible.offsetTop - 60,
+                    behavior: "smooth"
+                });
+            }
         });
     });
 });
