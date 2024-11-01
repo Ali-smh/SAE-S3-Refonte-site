@@ -52,7 +52,7 @@ button{
     right: 20em;
     bottom: 9em;
     z-index: 2;
-    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-anete-lusina-5238425.jpg");
+    background-image: url("/src/img/pexels-anete-lusina-5238425.jpg");
     background-size: cover;
 }
 
@@ -61,7 +61,7 @@ button{
     width: 18em;
     right: 8em;
     bottom: 15em;
-    background-image: url("/SAE-S3-Refonte-site/src/img/pexels-bohlemedia-1089930.jpg");
+    background-image: url("/src/img/pexels-bohlemedia-1089930.jpg");
     background-size: 100%;
 }
 
@@ -71,23 +71,25 @@ button{
 
 .are-you-addicted{
     margin-top: 10em;
-    margin-left: 8em;
 }
 
 .are-you-addicted .title{
     font-family: Lato, serif;
     font-size: 3em;
     font-weight: 400;
+    margin-left: 10%;
 }
 
 .are-you-addicted > p{
     font-family: "Ledger", serif;
+    margin-left: 10%;
 }
 
 .steps{
     display: flex;
     justify-content: space-between;
     margin-right: 10em;
+    margin-left: 10%;
 }
 
 .step{
@@ -105,4 +107,195 @@ button{
 .step p{
     font-family: Lato, serif;
     font-size: 1.05em;
+}
+
+.are-you-addicted .understand{
+    font-family: "League Spartan";
+    font-weight: 500;
+    text-align: center;
+    font-size: 2em;
+}
+
+.dependence-type{
+    font-family: Lato, serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.dependence-type p{
+    width: 30%;
+}
+
+.are-you-addicted .bottom{
+    font-family: "Ledger", serif;
+    margin-top: 2em;
+    width: 70%;
+
+}
+/**************************/
+
+/*UN PAS VERS LE DIALOGUE*/
+
+
+.a-step-towards-dialogue{
+    background-color: blue;
+    margin-top: 10em;
+}
+
+.a-step-towards-dialogue .top{
+    display: flex;
+    background-color: green;
+}
+
+.a-step-towards-dialogue .top .img{
+    width: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(/src/img/pexels-rickyrecap-1654698.jpg);
+}
+
+.why-dialogue{
+    background-color: #3A5A40;
+    color: white;
+    width: 55%;
+}
+
+.why-dialogue .title{
+    font-family: Lato, serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.why-dialogue .title-2{
+    font-family: "League Spartan";
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+.why-dialogue p{
+    font-family: "Ledger";
+    width: 70%;
+    margin-bottom: 4em;
+}
+
+.why-dialogue > *{
+    margin-left: 10%;
+}
+
+.a-step-towards-dialogue .bottom{
+    display: flex;
+}
+
+.bottom .left{
+    background-color: #606C38;
+    width: 50%;
+    color: white;
+}
+
+.bottom .right{
+    background-color: #FEFAE0;
+    width: 50%;
+}
+
+.bottom .left > *{
+    margin-left: 15%;
+}
+
+.left .title{
+    font-family: "League Spartan";
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+.right .title{
+    font-family: "League Spartan";
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+.left p{
+    font-family: "Ledger";
+    width: 60%;
+    margin-bottom: 3em;
+}
+
+.right p{
+    font-family: "Ledger";
+    width: 60%;
+    margin-bottom: 3em;
+}
+
+.bottom .right > *{
+    margin-left: 15%;
+}
+
+/**************************/
+
+/*L'ALCOOL ET LA SOCIETE*/
+
+.alcohol-and-society{
+    background-color: #F2E8CF;
+}
+
+.alcohol-and-society .title{
+    font-size: 2.8em;
+    font-family: Lato, serif;
+    font-weight: 500;
+    margin-left: 10%;
+}
+
+.alcohol-and-society > p{
+    font-family: "Ledger";
+    margin-left: 10%;
+    width: 50%;
+}
+
+.alcohol-and-society .line{
+    margin: auto;
+    width: 80%;
+    height: 0.6em;
+    background-color: #064789;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.line .point{
+    height: 20px;
+    width: 20px;
+    background-color: #064789;
+    border-radius: 50%;
+}
+
+.top-events{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.event .date{
+    font-size: 4em;
+    font-family: "League Gothic";
+}
+
+.event .text{
+    margin-top: -6em;
+    font-family: "Ledger";
+    font-size: 0.6em;
+    width: 20em;
+}
+
+.bottom-events{
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 62%;
+}
+
+.bottom-events .event{
+    margin-top: -4em;
 }
