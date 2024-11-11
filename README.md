@@ -16,51 +16,51 @@ Le site web que nous avons choisi de refaire est celui de l'association Alcool E
 ## Structure du projet
 ```
 src
+├───css
+│       acceuil.css
+│       actualites.css
+│       associations.css
+│       prevention.css
+│
+├───html
+│       accueil.html
+│       actualites.html
+│       associations.html
+│       prevention.html
+│
+├───img
+│   │   benevole.jpg
+│   │   partenariats.jpg
+│   │   pexels-anete-lusina-5238425.jpg
+│   │   pexels-benni-fish-40038242-12418421.jpg
+│   │   pexels-bohlemedia-1089930.jpg
+│   │   pexels-didsss-2675061.jpg
+│   │   pexels-fauxels-3184418.jpg
+│   │   pexels-ingo-609771.jpg
+│   │   pexels-rickyrecap-1654698.jpg
+│   │   pexels-vividcafe.JPG
+│   │   president.jpg
+│   │
+│   └───logos
+│           logo-Ministère_des_Solidarités_et_de_la_Santé.png
+│           logo-msa.png
+│           logo_alcool_ecoute.png
+│           logo_assurance_maladie.png
+│           logo_Mildt.jpg
+│           logo_Ministère-de-la-jeunesse-et-des-sports.png
+│
+├───js
+│       carousel.js
+│       detailActu.js
+│       partialsLoader.js
+│       script.js
+│
+└───partials
     ├───css
-    │       acceuil.css
-    │       actualites.css
-    │       associations.css
-    │       prevention.css
+    │       footer.css
+    │       header.css
     │
-    ├───html
-    │       accueil.html
-    │       actualites.html
-    │       associations.html
-    │       prevention.html
-    │
-    ├───img
-    │   │   benevole.jpg
-    │   │   partenariats.jpg
-    │   │   pexels-anete-lusina-5238425.jpg
-    │   │   pexels-benni-fish-40038242-12418421.jpg
-    │   │   pexels-bohlemedia-1089930.jpg
-    │   │   pexels-didsss-2675061.jpg
-    │   │   pexels-fauxels-3184418.jpg
-    │   │   pexels-ingo-609771.jpg
-    │   │   pexels-rickyrecap-1654698.jpg
-    │   │   pexels-vividcafe.JPG
-    │   │   president.jpg
-    │   │
-    │   └───logos
-    │           logo-Ministère_des_Solidarités_et_de_la_Santé.png
-    │           logo-msa.png
-    │           logo_alcool_ecoute.png
-    │           logo_assurance_maladie.png
-    │           logo_Mildt.jpg
-    │           logo_Ministère-de-la-jeunesse-et-des-sports.png
-    │
-    ├───js
-    │       carousel.js
-    │       detailActu.js
-    │       partialsLoader.js
-    │       script.js
-    │
-    └───partials
-        ├───css
-        │       footer.css
-        │       header.css
-        │
-        └───html
-                footer.html
-                header.html
+    └───html
+            footer.html
+            header.html
 ```
