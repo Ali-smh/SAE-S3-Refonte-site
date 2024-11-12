@@ -1,6 +1,6 @@
 export const lesAssociations = [
 
-    
+
     {
         id: 1,
         nom: "Alcool Ecoute VIENNE",
