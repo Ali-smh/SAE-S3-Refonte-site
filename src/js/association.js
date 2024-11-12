@@ -1,6 +1,6 @@
 import {lesAssociations} from "./lesAssociations.js";
 
-//--------------Les cartes----------------
+// -------------- Fonctions Utilitaires ----------------
 
 function creerElemAvecTag(tagName, content) {
     const elem = document.createElement(tagName);
@@ -21,6 +21,8 @@ function creerElemAvecIcone(iconClass, content) {
     return elem;
 }
 
+//--------------Les cartes----------------
+
 function creerCarteAssociation(association) {
     const carte = document.createElement('div');
     carte.classList.add('assoCarte');
@@ -32,7 +34,7 @@ function creerCarteAssociation(association) {
 
     //Adresse
     const adresseElem = creerElemAvecIcone('fa-map-marker-alt', association.adresse);
-    adresseElem.classList.add('adressse'); // Ajouter une classe spécifique pour l'adresse
+    adresseElem.classList.add('adressse');
     adresseElem.addEventListener('click', (event) => {
         openMapDialog(association);
     });
@@ -58,9 +60,88 @@ function creerCarteAssociation(association) {
 
 const section = document.querySelector('.assoc');
 
-for (const association of lesAssociations) {
-    section.append(creerCarteAssociation(association));
+function afficherCartes(associations) {
+    section.innerHTML = '';
+    if (associations.length === 0) {
+        // Si aucune association ne correspond, afficher un message
+        const message = creerElemAvecTag('p', "Aucune association trouvée pour les régions sélectionnées.");
+        section.append(message);
+    } else {
+        associations.forEach(association => section.append(creerCarteAssociation(association)));
+    }
 }
+afficherCartes(lesAssociations);
+
+
+//---------------Filtre------------------
+const filtre = document.querySelector('#filtre');
+const regions = [
+    "Auvergne-Rhône-Alpes", "Bourgogne Franche Comte",
+    "Centre-Val de Loire", "Grand Est", "Hauts-de-France", "Île-de-France",
+    "Normandie", "Nouvelle-Aquitaine", "Occitanie ",
+    "Pays de la Loire", "Provence Alpes Cote d'Azur", "Ouest"
+];
+
+filtre.append(creerElemAvecTag('h3', "Région"));
+filtre.appendChild(document.createElement("hr"));
+
+const selectAllLabel = document.createElement("label");
+selectAllLabel.innerHTML = `<input type="checkbox" id="selectAll" checked> Tout sélectionner`;
+filtre.appendChild(selectAllLabel);
+
+regions.forEach(region => {
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="checkbox" name="region" value="${region}" checked> ${region}`; // Cochées par défaut
+    filtre.appendChild(label);
+    label.querySelector("input").addEventListener("change", filtrerParRegion);
+});
+
+document.getElementById("selectAll").addEventListener("change", function () {
+    const isChecked = this.checked;
+    const checkboxes = filtre.querySelectorAll("input[name='region']");
+
+    // Cocher ou décocher toutes les cases régionales
+    checkboxes.forEach(checkbox => checkbox.checked = isChecked);
+
+    filtrerParRegion(); // Filtrer les cartes après changement de sélection
+});
+
+function filtrerParRegion() {
+    const regionsSelectionnees = Array.from(filtre.querySelectorAll("input[name='region']:checked"))
+        .map(input => input.value);
+
+    if (regionsSelectionnees.length === 0) {
+        // Afficher un message demandant de cocher au moins une région
+        section.innerHTML = '';
+        const message = creerElemAvecTag('p', "Veuillez cocher au moins une région pour afficher les associations.");
+        section.append(message);
+        return;
+    }
+
+    const associationsFiltrees = lesAssociations.filter(association =>
+        regionsSelectionnees.includes(association.region)
+    );
+
+    afficherCartes(regionsSelectionnees.length ? associationsFiltrees : lesAssociations);
+}
+
+//Bouton Filtre
+document.addEventListener("DOMContentLoaded", function () {
+    const boutonFiltre = document.querySelector("#boutonFiltre button");
+    const filtre = document.getElementById("filtre");
+
+    filtre.style.display = "none";
+
+    boutonFiltre.addEventListener("click", function () {
+        filtre.style.display = filtre.style.display === "none" ? "block" : "none";
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!filtre.contains(event.target) && !boutonFiltre.contains(event.target)) {
+            filtre.style.display = "none";
+        }
+    });
+});
 
 
 
@@ -130,52 +211,3 @@ function openMapDialog(association) {
 
 
 
-
-
-//---------------Filtre------------------
-const filtre = document.querySelector('#filtre');
-
-const regions = ["Auvergne Rhone Alpes", "Bourgogne Franche Comte",
-        "Centre Val de Loire", "Grand Est", "Hauts de france", "Ile de France",
-        "Normandie", "Nouvelle-Aquitaine", "Occitanie ",
-        "Pays de la Loire", "Provence Alpes Cote d'Azur", "Ouest"];
-
-    // Créer et ajouter le titre
-    filtre.append(creerElemAvecTag('h3', "Région"));
-
-    // La ligne
-    filtre.appendChild(document.createElement("hr"));
-
-    // Créer et ajouter les cases à cocher
-    regions.forEach(region => {
-        const label = document.createElement("label");
-        label.innerHTML = `<input type="checkbox" name="region" value="${region}"> ${region}`;
-        filtre.appendChild(label);
-    });
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const boutonFiltre = document.querySelector("#boutonFiltre button");
-    const filtre = document.getElementById("filtre");
-
-    // Initialiser le filtre comme masqué
-    filtre.style.display = "none";
-
-    // Attacher un événement de clic au bouton pour afficher/masquer le filtre
-    boutonFiltre.addEventListener("click", function () {
-        // Vérifier l'état actuel du filtre et le changer
-        if (filtre.style.display === "none") {
-            filtre.style.display = "block";  // Afficher le filtre
-        } else {
-            filtre.style.display = "none";   // Masquer le filtre
-        }
-    });
-
-    // Cacher le filtre si on clique en dehors du bouton et de l'élément filtre
-    document.addEventListener("click", function (event) {
-        if (!filtre.contains(event.target) && !boutonFiltre.contains(event.target)) {
-            filtre.style.display = "none";   // Masquer le filtre
-        }
-    });
-});

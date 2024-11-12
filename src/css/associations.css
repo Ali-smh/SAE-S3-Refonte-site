@@ -173,6 +173,7 @@ nav ul li a:hover {
 /*----------- Liste association -----------*/
 
 .assoc {
+    min-height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -186,6 +187,10 @@ nav ul li a:hover {
 
 .assoc::after {
     flex: auto;
+}
+
+.assoc p {
+    margin: auto;
 }
 
 .assoCarte {
