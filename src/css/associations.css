@@ -13,9 +13,9 @@ body{
 /*----------- Menu -----------*/
 
 nav ul {
-    list-style: none; /* Retirer les points */
-    display: flex; /* Disposition en ligne */
-    margin-left: auto; /* Pour pousser le menu à droite */
+    list-style: none;
+    display: flex;
+    margin-left: auto;
     align-items: center;
     flex-grow: 1;
 }
@@ -28,40 +28,40 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 18px;
-    display: inline-block;          /* Permet un meilleur contrôle des éléments */
-    height: 80px;                   /* Alignement vertical avec la hauteur du nav */
-    line-height: 80px;              /* Centrage du texte verticalement */
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
     padding: 0 10px;
 }
 
 nav ul li a:hover {
-    color: #4A8329;         /* Couleur au survol */
+    color: #4A8329;
 }
 
 
 /*----------- Titre -----------*/
 
 .titre_container {
-    text-align: center;            /* Centrer le texte */
-    margin: 20px auto;             /* Centrer le conteneur et espacement autour */
+    text-align: center;
+    margin: 20px auto;
 }
 
 .titre {
     color: #333333;
-    font-size: 32px;               /* Taille du texte */
-    font-weight: bold;             /* Texte en gras */
-    display: inline-block;         /* Nécessaire pour que la ligne sous le texte ne dépasse pas */
-    position: relative;            /* Nécessaire pour placer la ligne */
-    margin: 0;                     /* Retirer les marges par défaut */
+    font-size: 32px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    margin: 0;
 }
 
 .titre::after {
-    content: "";                   /* Créer un élément après le titre */
-    display: block;                /* Créer une ligne (block) */
-    width: 80%;                    /* Définir la largeur de la ligne (80% du texte) */
-    height: 2px;                   /* Hauteur de la ligne */
-    background-color: #333333;        /* Couleur de la ligne */
-    margin: 10px auto 0;           /* Espace au-dessus et centrer horizontalement */
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: #333333;
+    margin: 10px auto 0;
 }
 
 /*----------------------- Contenu -----------------------*/
@@ -150,7 +150,7 @@ nav ul li a:hover {
 /* Style pour le titre et la ligne de séparation */
 #filtre h3 {
     margin: 0 0 10px;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
 }
 #filtre hr {
@@ -162,12 +162,14 @@ nav ul li a:hover {
 /* Style des options */
 #filtre label {
     display: block;
-    font-size: 14px;
-    margin: 5px 0;
+    font-size: 18px;
+    margin: 10px 0;
     cursor: pointer;
     color: #333;
 }
-
+#filtre #selectAll{
+    font-weight: 400;
+}
 
 
 /*----------- Liste association -----------*/

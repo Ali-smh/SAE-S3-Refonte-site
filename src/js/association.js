@@ -9,14 +9,14 @@ function creerElemAvecTag(tagName, content) {
 }
 
 function creerElemAvecIcone(iconClass, content) {
-    const elem = document.createElement('div'); // Crée un conteneur pour le texte et l'icône
-    elem.classList.add('iconeTexte'); // Classe pour styliser cet élément
+    const elem = document.createElement('div');
+    elem.classList.add('iconeTexte');
 
-    const icon = document.createElement('i'); // Cree un élément icône
-    icon.classList.add('fas', iconClass); // Ajoute les classes de FontAwesome à l'icône
+    const icon = document.createElement('i');
+    icon.classList.add('fas', iconClass);
 
-    elem.append(creerElemAvecTag('span',content)); // Ajoute le texte dans le conteneur
-    elem.append(icon); // Ajoute l'icône après le texte
+    elem.append(creerElemAvecTag('span',content));
+    elem.append(icon);
 
     return elem;
 }
@@ -63,7 +63,6 @@ const section = document.querySelector('.assoc');
 function afficherCartes(associations) {
     section.innerHTML = '';
     if (associations.length === 0) {
-        // Si aucune association ne correspond, afficher un message
         const message = creerElemAvecTag('p', "Aucune association trouvée pour les régions sélectionnées.");
         section.append(message);
     } else {
@@ -74,55 +73,31 @@ afficherCartes(lesAssociations);
 
 
 //---------------Filtre------------------
-const filtre = document.querySelector('#filtre');
-const regions = [
-    "Auvergne-Rhône-Alpes", "Bourgogne Franche Comte",
-    "Centre-Val de Loire", "Grand Est", "Hauts-de-France", "Île-de-France",
-    "Normandie", "Nouvelle-Aquitaine", "Occitanie ",
-    "Pays de la Loire", "Provence Alpes Cote d'Azur", "Ouest"
-];
-
-filtre.append(creerElemAvecTag('h3', "Région"));
-filtre.appendChild(document.createElement("hr"));
-
-const selectAllLabel = document.createElement("label");
-selectAllLabel.innerHTML = `<input type="checkbox" id="selectAll" checked> Tout sélectionner`;
-filtre.appendChild(selectAllLabel);
-
-regions.forEach(region => {
-    const label = document.createElement("label");
-    label.innerHTML = `<input type="checkbox" name="region" value="${region}" checked> ${region}`; // Cochées par défaut
-    filtre.appendChild(label);
-    label.querySelector("input").addEventListener("change", filtrerParRegion);
-});
 
 document.getElementById("selectAll").addEventListener("change", function () {
     const isChecked = this.checked;
-    const checkboxes = filtre.querySelectorAll("input[name='region']");
+    document.querySelectorAll("input[name='region']").forEach(checkbox => checkbox.checked = isChecked);
+    filtrerParRegion();
+});
 
-    // Cocher ou décocher toutes les cases régionales
-    checkboxes.forEach(checkbox => checkbox.checked = isChecked);
-
-    filtrerParRegion(); // Filtrer les cartes après changement de sélection
+document.querySelectorAll("input[name='region']").forEach(checkbox => {
+    checkbox.addEventListener("change", filtrerParRegion);
 });
 
 function filtrerParRegion() {
-    const regionsSelectionnees = Array.from(filtre.querySelectorAll("input[name='region']:checked"))
+    const regionsSelectionnees = Array.from(document.querySelectorAll("input[name='region']:checked"))
         .map(input => input.value);
 
     if (regionsSelectionnees.length === 0) {
-        // Afficher un message demandant de cocher au moins une région
         section.innerHTML = '';
-        const message = creerElemAvecTag('p', "Veuillez cocher au moins une région pour afficher les associations.");
-        section.append(message);
+        section.append(creerElemAvecTag('p', "Veuillez cocher au moins une région pour afficher les associations."));
         return;
     }
 
     const associationsFiltrees = lesAssociations.filter(association =>
         regionsSelectionnees.includes(association.region)
     );
-
-    afficherCartes(regionsSelectionnees.length ? associationsFiltrees : lesAssociations);
+    afficherCartes(associationsFiltrees);
 }
 
 //Bouton Filtre
@@ -191,13 +166,13 @@ function openMapDialog(association) {
 
 
     // Fermer le dialog en cliquant sur le bouton
-    document.getElementById('closeButton').addEventListener('click', () => {
+    closeButton.addEventListener('click', () => {
         document.body.classList.remove('no-scroll');
-        dialog.close(); // Fermer le dialog
-        document.body.removeChild(dialog); // Supprimer le dialog du DOM après fermeture
+        dialog.close();
+        document.body.removeChild(dialog);
     });
 
-    document.getElementById('voir').addEventListener('click', () => {
+    voirButton.addEventListener('click', () => {
         window.open(association.lien, '_blank');
     });
 }
