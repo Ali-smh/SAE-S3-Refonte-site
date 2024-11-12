@@ -1,7 +1,314 @@
-body, html{
-    height: 100%;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body{
-    margin: 0;
+    min-width: 720px;
+}
+
+
+/*----------- Menu -----------*/
+
+nav ul {
+    list-style: none; /* Retirer les points */
+    display: flex; /* Disposition en ligne */
+    margin-left: auto; /* Pour pousser le menu à droite */
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin-right: auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: inline-block;          /* Permet un meilleur contrôle des éléments */
+    height: 80px;                   /* Alignement vertical avec la hauteur du nav */
+    line-height: 80px;              /* Centrage du texte verticalement */
+    padding: 0 10px;
+}
+
+nav ul li a:hover {
+    color: #4A8329;         /* Couleur au survol */
+}
+
+
+/*----------- Titre -----------*/
+
+.titre_container {
+    text-align: center;            /* Centrer le texte */
+    margin: 20px auto;             /* Centrer le conteneur et espacement autour */
+}
+
+.titre {
+    color: #333333;
+    font-size: 32px;               /* Taille du texte */
+    font-weight: bold;             /* Texte en gras */
+    display: inline-block;         /* Nécessaire pour que la ligne sous le texte ne dépasse pas */
+    position: relative;            /* Nécessaire pour placer la ligne */
+    margin: 0;                     /* Retirer les marges par défaut */
+}
+
+.titre::after {
+    content: "";                   /* Créer un élément après le titre */
+    display: block;                /* Créer une ligne (block) */
+    width: 80%;                    /* Définir la largeur de la ligne (80% du texte) */
+    height: 2px;                   /* Hauteur de la ligne */
+    background-color: #333333;        /* Couleur de la ligne */
+    margin: 10px auto 0;           /* Espace au-dessus et centrer horizontalement */
+}
+
+/*----------------------- Contenu -----------------------*/
+.contenu{
+    padding: 20px;
+}
+
+/*----------- Recherche Filtre -----------*/
+
+.search-filter {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.search-filter #search {
+    width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #B1B1B1;
+    background-color: #E8E8E8;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.search-filter #search:focus {
+    border: 1px solid #4A8329;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+    outline: none;
+}
+
+
+.search-filter button {
+    padding: 11px 20px;
+    background-color: #E8E8E8;
+    color: #B1B1B1;
+    border: 1px solid #B1B1B1;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.search-filter button:hover {
+    background-color: #4A8329;
+    color: white;
+}
+
+
+.search-filter button i {
+    font-size: 0.8em;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.search-filter #search:focus + i {
+    color: #4A8329;
+}
+
+
+
+
+/* Conteneur des options de filtre */
+#filtre {
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 100%; /* Juste en bas du bouton */
+    right: 0;
+    width: 500px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Style pour le titre et la ligne de séparation */
+#filtre h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+#filtre hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* Style des options */
+#filtre label {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+
+
+/*----------- Liste association -----------*/
+
+.assoc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background-color: #FBF8F0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+
+.assoc::after {
+    flex: auto;
+}
+
+.assoCarte {
+    background-color: #F8F8F8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.assoCarte h3 {
+    color: #4A8329;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.iconeTexte {
+    display: flex;
+    justify-content: space-between; /* Aligne le texte à gauche et l'icône à droite */
+    align-items: center; /* Centre verticalement le texte et l'icône */
+    margin: 10px 0 0 0;
+}
+
+.assoCarte p{
+    font-size: 1em;
+    justify-content: space-between;
+}
+
+.assoCarte .adressse:hover span {
+    text-decoration: underline;
+}
+
+.assoCarte i {
+    margin: 0 0 0 15px;
+}
+
+
+
+
+
+/*----------- Map -----------*/
+
+dialog {
+    width: 80%;
+    align-items:center;
+    background: white;
+
+    position :fixed ;
+    left :10%;
+    top:10%;
+    padding: 1% 3%;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+dialog h2 {
+    color: #4A8329;
+    text-align: center;
+    font-size: 1.5em;
+    align-items: center;
+    padding:10px 20px;
+    border-bottom: 2px solid #e3e3e3;
+}
+
+#closeButton {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    border-radius:50%;
+    transition: background 0.3s;
+
+}
+
+#closeButton:hover {
+    background: #e3e3e3;
+}
+
+
+#imgMap{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    padding :10px 0 ;
+}
+
+.dialogFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.dialogFooter p{
+    font-size: 0.8em;
+    color: #666;
+    }
+
+.dialogFooter button{
+    border-radius: 10px;
+    border: 2px solid gray;
+    background-color: #4A8329;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.dialogFooter button:hover {
+    background-color: #3a6824;
+}
+
+
+.no-scroll {
+    overflow: hidden;
 }
