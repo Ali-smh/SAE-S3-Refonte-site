@@ -8,15 +8,35 @@ function creerElemAvecTag(tagName, content) {
     return elem;
 }
 
-function creerElemAvecIcone(iconClass, content) {
+function creerElemAvecIcone(iconClass, content, estCopier = false) {
     const elem = document.createElement('div');
     elem.classList.add('iconeTexte');
 
     const icon = document.createElement('i');
     icon.classList.add('fas', iconClass);
 
-    elem.append(creerElemAvecTag('span',content));
+    elem.append(creerElemAvecTag('span', content));
     elem.append(icon);
+
+    if (estCopier) {
+        elem.classList.add('copier');
+
+        elem.addEventListener('click', () => {
+            navigator.clipboard.writeText(content)
+        });
+
+        // Changer l'icône au survol pour indiquer la copie
+        elem.addEventListener('mouseenter', () => {
+            icon.classList.remove(iconClass);            // Enlever l'icône d'origine
+            icon.classList.add('fa-copy');               // Ajouter l'icône de copie
+        });
+
+        // Remettre l'icône d'origine lorsque la souris quitte l'élément
+        elem.addEventListener('mouseleave', () => {
+            icon.classList.remove('fa-copy');            // Enlever l'icône de copie
+            icon.classList.add(iconClass);               // Remettre l'icône d'origine
+        });
+    }
 
     return elem;
 }
@@ -42,12 +62,12 @@ function creerCarteAssociation(association) {
 
     //Numero
     if (association.numero) {
-        carte.append(creerElemAvecIcone('fa-phone', association.numero));
+        carte.append(creerElemAvecIcone('fa-phone', association.numero,true));
     }
 
     //Mail
     if (association.mail) {
-        carte.append(creerElemAvecIcone('fa-envelope', association.mail));
+        carte.append(creerElemAvecIcone('fa-envelope', association.mail,true ));
     }
 
     //President
@@ -177,10 +197,20 @@ function openMapDialog(association) {
     });
 }
 
+//---------------------Recherche-----------------
 
+function rechercherAssociations() {
+    const recherche = document.getElementById('search').value.toLowerCase();
 
+    const associationsFiltrees = lesAssociations.filter(association => {
+        return association.nom.toLowerCase().includes(recherche) ||
+            association.president.toLowerCase().includes(recherche);
+    });
 
+    afficherCartes(associationsFiltrees);
+}
 
+document.getElementById('search').addEventListener('input', rechercherAssociations);
 
 
 
