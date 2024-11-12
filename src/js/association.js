@@ -73,18 +73,37 @@ function openMapDialog(association) {
     dialog.id = 'map';
 
     // Contenu du dialog
-    const dialogContent = `
-        <h2>${association.nom}</h2>          
-        <button id="closeButton">&times;</button>
-        <img id="imgMap" src=${association.img} alt="Image">
-        <div class="dialogFooter">  
-           <p>${association.adresse}</p>
-           <button id="voir">Voir</button>
-        </div>
-    `;
+    const title = creerElemAvecTag('h2', association.nom);
 
-    dialog.innerHTML = dialogContent;// Ajouter le contenu dans le dialog
+    // Bouton de fermeture
+    const closeButton = document.createElement('button');
+    closeButton.id = 'closeButton';
+    closeButton.innerHTML = '&times;';
 
+    // Image de l'association
+    const imgMap = document.createElement('img');
+    imgMap.id = 'imgMap';
+    imgMap.src = association.img;
+    imgMap.alt = 'Image';
+
+    // Conteneur pour le pied du dialog
+    const dialogFooter = document.createElement('div');
+    dialogFooter.classList.add('dialogFooter');
+
+    // Adresse
+    const adresse = creerElemAvecTag('p', association.adresse);
+
+    // Bouton "Voir"
+    const voirButton = creerElemAvecTag('button', 'Voir');
+    voirButton.id = 'voir';
+
+    // Ajouter les éléments dans le dialog
+    dialog.appendChild(title);
+    dialog.appendChild(closeButton);
+    dialog.appendChild(imgMap);
+    dialogFooter.appendChild(adresse);
+    dialogFooter.appendChild(voirButton);
+    dialog.appendChild(dialogFooter);
     document.body.appendChild(dialog);    // Ajouter le dialog au body
 
     dialog.showModal();    // Afficher le dialog
