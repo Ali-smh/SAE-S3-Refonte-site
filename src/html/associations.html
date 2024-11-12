@@ -1,14 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Associations</title>
-    <link rel="icon" href="/src/img/logos/logo_alcool_ecoute.png">
-    <link rel="stylesheet" href="/src/css/associations.css">
-    <script src="../js/partialsLoader.js" defer></script>
-</head>
-<body>
-    <header></header>
-    <footer></footer>
-</body>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Associations</title>
+        <link rel="stylesheet" href ="../css/associations.css">
+        <link rel="stylesheet" href ="../partials/css/header.css">
+
+        <script src="../js/association.js" type="module"></script>
+        <script src="../js/lesAssociations.js" type="module"></script>
+
+        <!-- Icone -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header></header>
+
+        <!-- Titre -->
+        <div class="titre_container">
+            <h1 class="titre">Associations</h1>
+        </div>
+
+
+
+        <div class="contenu">
+            <div class="search-filter">
+                <input id = "search" type="text" placeholder="🔍 Search" aria-label="Rechercher une association">
+
+                <div id="boutonFiltre">
+
+                    <button>Filtre <i class="fas fa-chevron-down"></i></button>
+
+                    <!-- Conteneur des options de filtre -->
+                    <div id="filtre">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="assoc"></div>
+        </div>
+
+
+
+
+
+
+        <footer>
+            <div class="footer-content">
+                <p>ALCOOL ECOUTE F.N.J.S. - Reconnue d'Utilité Publique</p>
+                <p>Groupement d'Associations d'Aide aux Personnes en Difficulté avec l'Alcool</p>
+                <p>Siège Social : 3 Impasse des Alouettes – 86190 AYRON</p>
+            </div>
+            <div class="footer-logos">
+                <img src="logo1.png" alt="logo">
+                <img src="logo2.png" alt="logo">
+                <img src="logo3.png" alt="logo">
+                <!-- Plus de logos -->
+            </div>
+        </footer>
+
+
+        <script src = "../js/lesAssociations.js"></script>
+    </body>
 </html>
