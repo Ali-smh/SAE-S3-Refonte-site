@@ -41,17 +41,35 @@ src
 │   │   pexels-vividcafe.JPG
 │   │   president.jpg
 │   │
-│   └───logos
-│           logo-Ministère_des_Solidarités_et_de_la_Santé.png
-│           logo-msa.png
-│           logo_alcool_ecoute.png
-│           logo_assurance_maladie.png
-│           logo_Mildt.jpg
-│           logo_Ministère-de-la-jeunesse-et-des-sports.png
+│   ├───logos
+│   │       logo-Ministère_des_Solidarités_et_de_la_Santé.png
+│   │       logo-msa.png
+│   │       logo_alcool_ecoute.png
+│   │       logo_assurance_maladie.png
+│   │       logo_Mildt.jpg
+│   │       logo_Ministère-de-la-jeunesse-et-des-sports.png
+│   │
+│   └───map
+│           map10_HauteMarne.png
+│           map11_Allier.png
+│           map12_Somme.png
+│           map13_Loiret.png
+│           map14_Aisne.png
+│           map1_Vienne.png
+│           map2_Marne.png
+│           map3_Ain.png
+│           map4_HauteSavoie.png
+│           map5_Cher.png
+│           map6_ValMarne.png
+│           map7_Sarthe.png
+│           map8_Calvados.png
+│           map9_Vosges.png
 │
 ├───js
+│       association.js
 │       carousel.js
 │       detailActu.js
+│       lesAssociations.js
 │       partialsLoader.js
 │       script.js
 │
