@@ -41,7 +41,7 @@ body{
 
 /*----------- Recherche Filtre -----------*/
 
-.search-filter {
+.recherche-filtre {
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -52,7 +52,7 @@ body{
 
 /* Recherche */
 
-#search-container {
+#conteneur-recherche {
     display: flex;
     align-items: center;
     background-color: #E8E8E8;
@@ -63,12 +63,12 @@ body{
     width: 70%;
 }
 
-#search-container i {
+#conteneur-recherche i {
     color: #a5a5a5;
     margin-right: 10px;
 }
 
-#search-container #recherche {
+#conteneur-recherche #recherche {
     flex: 1;
     border: none;
     outline: none;
@@ -77,7 +77,7 @@ body{
     color: #000;
 }
 
-#search-container #recherche::placeholder {
+#conteneur-recherche #recherche::placeholder {
     color: #B1B1B1;
 }
 
@@ -193,8 +193,8 @@ body{
 
 .iconeTexte {
     display: flex;
-    justify-content: space-between; /* Aligne le texte à gauche et l'icône à droite */
-    align-items: center; /* Centre verticalement le texte et l'icône */
+    justify-content: space-between;
+    align-items: center;
     margin: 10px 0 0 0;
 }
 
@@ -203,21 +203,14 @@ body{
     justify-content: space-between;
 }
 
-.assoCarte .adressse:hover span {
+.assoCarte .adressse:hover span , .assoCarte .adressse:hover i, .copier:hover {
     color: #0242af;
+    cursor : pointer;
 }
 
 .assoCarte i {
     margin: 0 0 0 15px;
 }
-
-.copier{
-    cursor: pointer;
-}
-.copier:hover {
-    color: #0242af;
-}
-
 
 /*----------- Map -----------*/
 
