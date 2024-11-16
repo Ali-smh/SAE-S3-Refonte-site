@@ -1,6 +1,6 @@
 /*GLOBAL*/
 
-body{
+body {
     margin: 0;
 }
 
@@ -231,16 +231,23 @@ button{
     margin-left: 15%;
 }
 
+
 /**************************/
 
 /*L'ALCOOL ET LA SOCIETE*/
 
+.alcohol-and-society > * {
+    margin: 0;
+}
+
 .alcohol-and-society{
-    background-color: #F2E8CF;
+    padding-top: 5%;
+    background-color: #fbf8f0;
+    color: #333333;
 }
 
 .alcohol-and-society .title{
-    font-size: 2.8em;
+    font-size: 3em;
     font-family: Lato, serif;
     font-weight: 500;
     margin-left: 10%;
@@ -278,6 +285,7 @@ button{
 }
 
 .event .date{
+    color: #3A5A40;
     font-size: 4em;
     font-family: "League Gothic";
 }
@@ -298,4 +306,92 @@ button{
 
 .bottom-events .event{
     margin-top: -4em;
+    margin-bottom: 2em;
 }
+
+/**************************/
+
+/*CHANGER MAINTENANT*/
+
+.change-now * {
+    margin: 0;
+}
+
+.change-now{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.change-now > .title{
+    margin-left: 10%;
+    font-family: "Lato", serif;
+    font-weight: 500;
+    font-size: 3em;
+}
+
+.change-now > p{
+    margin-left: 10%;
+    margin-top: 1em;
+    font-family: "Ledger", serif;
+}
+
+.change-now .steps{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    width: 75%;
+}
+
+.change-now .step{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    margin-top: 8em;
+    height: 20em;
+    width: 25%;
+}
+
+.change-now .step .number{
+    text-align: center;
+    font-size: 4em;
+    font-family: "League Gothic";
+    color: #064789;
+    margin-top: -0.6em;
+}
+
+.change-now .step .title{
+    font-size: 1.4em;
+    text-align: center;
+    font-family: "League Spartan";
+    font-weight: bold;
+}
+
+.change-now .step .text{
+    font-family: "Lato", serif;
+    font-size: 0.9em;
+    font-weight: 300;
+    width: 78%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.advices-container{
+    margin-bottom: 10%;
+    margin-left: 5%;
+}
+
+.advices-container .advices-title{
+    font-family: "Ledger";
+    font-size: 0.6em;
+    margin-left: 5%;
+}
+
+.advices-container .advices li{
+    font-family: "Ledger";
+    font-size: 0.6em;
+    width: 80%;
+    margin-left: 5%;
+}
+
+/**************************/
