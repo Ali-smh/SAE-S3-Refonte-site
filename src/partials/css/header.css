@@ -26,3 +26,32 @@ header{
     color: black;
     text-decoration: none;
 }
+
+.fa-bars {
+    margin-left: 1em;
+    font-size: 2em;
+    display: none;
+}
+
+.fa-magnifying-glass{
+    margin-left: 2em;
+}
+
+@media (max-width: 1024px){
+    header{
+        justify-content: space-between;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .fa-bars {
+        display:block;
+    }
+
+    .fa-magnifying-glass{
+        font-size: 2em;
+        margin-right: 1em;
+    }
+}
