@@ -9,36 +9,6 @@ body{
     min-width: 720px;
 }
 
-
-/*----------- Menu -----------*/
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
-    align-items: center;
-    flex-grow: 1;
-}
-
-nav ul li {
-    margin-right: auto;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    display: inline-block;
-    height: 80px;
-    line-height: 80px;
-    padding: 0 10px;
-}
-
-nav ul li a:hover {
-    color: #4A8329;
-}
-
-
 /*----------- Titre -----------*/
 
 .titre_container {
@@ -71,7 +41,7 @@ nav ul li a:hover {
 
 /*----------- Recherche Filtre -----------*/
 
-.search-filter {
+.recherche-filtre {
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -80,25 +50,40 @@ nav ul li a:hover {
     padding: 10px;
 }
 
-.search-filter #search {
-    width: 70%;
-    padding: 10px;
-    border-radius: 15px;
-    border: 1px solid #B1B1B1;
+/* Recherche */
+
+#conteneur-recherche {
+    display: flex;
+    align-items: center;
     background-color: #E8E8E8;
-    font-size: 1em;
+    border: 1px solid #B1B1B1;
+    border-radius: 20px;
+    padding: 10px;
     transition: all 0.3s ease;
+    width: 70%;
 }
 
-.search-filter #search:focus {
-    border: 1px solid #4A8329;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+#conteneur-recherche i {
+    color: #a5a5a5;
+    margin-right: 10px;
+}
+
+#conteneur-recherche #recherche {
+    flex: 1;
+    border: none;
     outline: none;
+    background: none;
+    font-size: 1em;
+    color: #000;
 }
 
+#conteneur-recherche #recherche::placeholder {
+    color: #B1B1B1;
+}
 
-.search-filter button {
+/* Filtre */
+
+#boutonFiltre button {
     padding: 11px 20px;
     background-color: #E8E8E8;
     color: #B1B1B1;
@@ -113,41 +98,40 @@ nav ul li a:hover {
     z-index: 1;
 }
 
-.search-filter button:hover {
+#boutonFiltre button:hover {
     background-color: #4A8329;
     color: white;
 }
 
 
-.search-filter button i {
+#boutonFiltre button i {
     font-size: 0.8em;
     margin-left: 8px;
     transition: transform 0.3s ease;
 }
 
-.search-filter #search:focus + i {
+#boutonFiltre #recherche:focus + i {
     color: #4A8329;
 }
 
-
-
-
 /* Conteneur des options de filtre */
+
 #filtre {
-    display: none; /* Masqué par défaut */
+    display: none;
     position: absolute;
     top: 100%; /* Juste en bas du bouton */
     right: 0;
-    width: 500px;
+    width: 300px;
+    max-height: 300px;
     padding: 15px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    overflow-y: auto;
 }
 
-/* Style pour le titre et la ligne de séparation */
 #filtre h3 {
     margin: 0 0 10px;
     font-size: 20px;
@@ -159,16 +143,12 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
-/* Style des options */
 #filtre label {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px 0;
     cursor: pointer;
     color: #333;
-}
-#filtre #selectAll{
-    font-weight: 400;
 }
 
 
@@ -178,7 +158,7 @@ nav ul li a:hover {
     min-height: 200px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
     background-color: #FBF8F0;
     padding: 20px;
@@ -213,8 +193,8 @@ nav ul li a:hover {
 
 .iconeTexte {
     display: flex;
-    justify-content: space-between; /* Aligne le texte à gauche et l'icône à droite */
-    align-items: center; /* Centre verticalement le texte et l'icône */
+    justify-content: space-between;
+    align-items: center;
     margin: 10px 0 0 0;
 }
 
@@ -223,21 +203,14 @@ nav ul li a:hover {
     justify-content: space-between;
 }
 
-.assoCarte .adressse:hover span {
+.assoCarte .adressse:hover span , .assoCarte .adressse:hover i, .copier:hover {
     color: #0242af;
+    cursor : pointer;
 }
 
 .assoCarte i {
     margin: 0 0 0 15px;
 }
-
-.copier{
-    cursor: pointer;
-}
-.copier:hover {
-    color: #0242af;
-}
-
 
 /*----------- Map -----------*/
 
