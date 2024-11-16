@@ -1,4 +1,6 @@
 footer{
+    display: flex;
+    justify-content: center;
     position: sticky;
     top: 100vh;
     font-family: "Lato", sans-serif;

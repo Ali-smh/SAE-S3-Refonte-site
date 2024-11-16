@@ -40,27 +40,31 @@ button{
     font-weight: bold;
 }
 
+.img-container{
+    display: flex;
+    margin-left: 30%;
+    margin-top: 8%;
+}
+
 .alcool-img-1, .alcool-img-2 {
-    position: absolute;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .alcool-img-1{
+    margin-left: -10em;
     width: 15em;
     height: 14em;
-    right: 20em;
-    bottom: 9em;
     z-index: 2;
     background-image: url("/src/img/pexels-anete-lusina-5238425.jpg");
     background-size: cover;
 }
 
 .alcool-img-2{
+    margin-left: -10em;
+    margin-top: -10em;
     height: 18em;
     width: 18em;
-    right: 8em;
-    bottom: 15em;
     background-image: url("/src/img/pexels-bohlemedia-1089930.jpg");
     background-size: 100%;
 }

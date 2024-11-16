@@ -49,8 +49,7 @@ button{
 }
 
 .right{
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-image: url("/src/img/pexels-ingo-609771.jpg");
     height: 100%;
@@ -133,13 +132,16 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 7em auto auto auto;
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-image: url("/src/img/pexels-vividcafe.jpg");
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .nos-associations .title{
@@ -182,6 +184,7 @@ button{
     align-items: center;
     width: 100%;
     justify-content: center;
+    margin-bottom: 5%;
 }
 
 .actualites h2{
@@ -193,21 +196,22 @@ button{
     display: flex;
     margin-top: 0.5em;
     width: 95%;
-    height: 25em;
     justify-content: space-between;
 }
 
 .actu{
+    display: flex;
+    flex-direction: column;
     width: 25%;
     background-color: #F2F2F2;
+    height: 30em;
 }
 
 .actu .img{
-    display: flex;
     width: 100%;
     height: 45%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
 }
 
@@ -252,4 +256,101 @@ button{
 
 /**************************/
 
+/* Mobile Devices */
+@media (max-width: 480px) {
+    body{
+        background-color: black;
+    }
+}
+        
+/* Low resolution Tablets and iPads */
+@media (min-width: 481px) and (max-width: 767px) {
+    body{
+        background-color: rgb(22, 132, 184);
+    }
 
+    .left .content{
+        margin-left: 2em;
+    }
+
+    .who-are-we{
+        width: 100%;
+        margin-bottom: 20%;
+    }
+
+    .what-we-do{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    
+    .actu{
+        margin: auto;
+        margin-top: 3em;
+        width: 70%;
+    }
+}
+        
+/* Tablets iPads (Portrait) */
+@media (min-width: 768px) and (max-width: 1024px){
+    body{
+        background-color: rgb(219, 14, 14);
+    }
+
+    
+    .actu{
+        margin: auto;
+        margin-top: 3em;
+        width: 50%;
+    }
+}
+    
+/* Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    body{
+        background-color: rgb(22, 230, 50);
+    }
+}
+    
+/* Big boi Monitors */
+@media (min-width: 1281px) {
+    body{
+        background-color: white;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 1024px){
+
+    /*Slogan*/
+
+    .slogan{
+        height: auto;
+    }
+
+    .right{
+        display: none;
+    }
+
+
+    .left{
+        width: 100%;
+    }
+
+    .left button{
+        margin-bottom: 10%;
+    }
+    
+
+    /*Actualités*/
+
+
+    .actualites .content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.5em;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #064789;
+    }
+}
