@@ -255,20 +255,9 @@ button{
 }
 
 /**************************/
-
-/* Mobile Devices */
-@media (max-width: 480px) {
-    body{
-        background-color: black;
-    }
-}
         
 /* Low resolution Tablets and iPads */
 @media (min-width: 481px) and (max-width: 767px) {
-    body{
-        background-color: rgb(22, 132, 184);
-    }
-
     .left .content{
         margin-left: 2em;
     }
@@ -293,11 +282,6 @@ button{
         
 /* Tablets iPads (Portrait) */
 @media (min-width: 768px) and (max-width: 1024px){
-    body{
-        background-color: rgb(219, 14, 14);
-    }
-
-    
     .actu{
         margin: auto;
         margin-top: 3em;
@@ -307,15 +291,12 @@ button{
     
 /* Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
-    body{
-        background-color: rgb(22, 230, 50);
-    }
+    
 }
     
 /* Big boi Monitors */
 @media (min-width: 1281px) {
     body{
-        background-color: white;
         font-size: 1.3em;
     }
 }
@@ -351,6 +332,5 @@ button{
         margin-top: 0.5em;
         justify-content: space-between;
         width: 100%;
-        background-color: #064789;
     }
 }
