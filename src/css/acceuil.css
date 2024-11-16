@@ -33,11 +33,13 @@ button{
 .left .title{
     font-size: 3.2em;
     color: #333333;
+    width: 80%;
 }
 
 .left p {
     font-size: 1.5em;
     font-weight: 300;
+    width: 95%;
 }
 
 .left button{
@@ -83,6 +85,10 @@ button{
     bottom: 1.8em;
 }
 
+.who-are-we p{
+    width: 75%;
+}
+
 .presentation p{
     font-size: 1.2em;
     font-family: "Ledger", serif;
@@ -112,9 +118,14 @@ button{
     margin-left: 28%;
 }
 
+.what-we-do p{
+    width: 95%;
+}
+
 /**************************/
 
 /*NOS-ASSOS DIV*/
+
 
 .nos-associations{
     font-family: "Lato", sans-serif;
@@ -132,6 +143,8 @@ button{
 }
 
 .nos-associations .title{
+    margin: 0;
+    margin-top: 0.5em;
     font-size: 3.2em;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
@@ -141,6 +154,7 @@ button{
     font-family: "Ledger", serif;
     text-align: center;
     font-size: 1.2em;
+    width: 40%;
 }
 
 .discover{
