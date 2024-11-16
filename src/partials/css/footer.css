@@ -53,3 +53,14 @@ footer p{
 .desc p{
     margin: 0;
 }
+
+@media (max-width: 1024px){
+  .partners{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .partners > img{
+    margin-top: 2em;
+  }
+}
