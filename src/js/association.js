@@ -200,7 +200,7 @@ function openMapDialog(association) {
 //---------------------Recherche-----------------
 
 function rechercherAssociations() {
-    const recherche = document.getElementById('search').value.toLowerCase();
+    const recherche = document.getElementById('recherche').value.toLowerCase();
 
     const associationsFiltrees = lesAssociations.filter(association => {
         return association.nom.toLowerCase().includes(recherche) ||
@@ -210,7 +210,7 @@ function rechercherAssociations() {
     afficherCartes(associationsFiltrees);
 }
 
-document.getElementById('search').addEventListener('input', rechercherAssociations);
+document.getElementById('recherche').addEventListener('input', rechercherAssociations);
 
 
 

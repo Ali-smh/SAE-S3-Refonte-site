@@ -26,14 +26,20 @@
 
         <div class="contenu">
             <div class="search-filter">
-                <input id = "search" type="text" placeholder="🔍 Search" aria-label="Rechercher une association">
+                <div id = "search-container">
+                    <i class="fas fa-search"></i>
+                    <input id = "recherche" type="text" placeholder="Search..." aria-label="Rechercher une association">
+                </div>
+
+
+
                 <div id="boutonFiltre">
                     <button>Filtre <i class="fas fa-chevron-down"></i></button>
                     <!-- Conteneur des options de filtre -->
                     <div id="filtre">
                         <h3>Région</h3>
                         <hr>
-                        <label id="selectAll"><input type="checkbox"  checked> Tout sélectionner</label>
+                        <label ><input type="checkbox" id="selectAll" checked> Tout sélectionner</label>
                         <label><input type="checkbox" name="region" value="Auvergne-Rhône-Alpes" checked> Auvergne-Rhône-Alpes</label>
                         <label><input type="checkbox" name="region" value="Bourgogne Franche Comte" checked> Bourgogne Franche Comte</label>
                         <label><input type="checkbox" name="region" value="Centre-Val de Loire" checked> Centre-Val de Loire</label>
