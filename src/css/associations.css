@@ -9,36 +9,6 @@ body{
     min-width: 720px;
 }
 
-
-/*----------- Menu -----------*/
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
-    align-items: center;
-    flex-grow: 1;
-}
-
-nav ul li {
-    margin-right: auto;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    display: inline-block;
-    height: 80px;
-    line-height: 80px;
-    padding: 0 10px;
-}
-
-nav ul li a:hover {
-    color: #4A8329;
-}
-
-
 /*----------- Titre -----------*/
 
 .titre_container {
@@ -138,13 +108,15 @@ nav ul li a:hover {
     position: absolute;
     top: 100%; /* Juste en bas du bouton */
     right: 0;
-    width: 500px;
+    width: 300px;
+    max-height: 300px;
     padding: 15px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    overflow-y: auto;
 }
 
 /* Style pour le titre et la ligne de séparation */
@@ -160,6 +132,7 @@ nav ul li a:hover {
 }
 
 /* Style des options */
+
 #filtre label {
     display: block;
     font-size: 18px;
@@ -167,10 +140,6 @@ nav ul li a:hover {
     cursor: pointer;
     color: #333;
 }
-#filtre #selectAll{
-    font-weight: 400;
-}
-
 
 /*----------- Liste association -----------*/
 
