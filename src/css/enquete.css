@@ -36,7 +36,7 @@ h1 {
 
 /* Conteneur principal */
 form {
-    text-align: center; /* Centre le formulaire */
+    text-align: center;
     margin: 40px auto;
     width: 80%;
     max-width: 600px;
@@ -53,7 +53,7 @@ form p {
     margin-bottom: 20px;
 }
 
-/* Champs de texte */
+/* Champs de texte et listes déroulantes */
 input[type="text"],
 select {
     width: 100%;
@@ -72,10 +72,10 @@ select:focus {
     outline: none;
 }
 
-/* Boutons radio et cases à cocher */
+/* Styles pour les boutons radio et les checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
-    display: none; /* Cache les entrées natives */
+    display: none; /* Masque les inputs natifs */
 }
 
 label {
@@ -87,7 +87,7 @@ label {
     border-radius: 5px;
     background-color: #f9f9f9;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     text-align: left;
 }
 
@@ -96,6 +96,7 @@ label:hover {
     border-color: #66a3ff;
 }
 
+/* Style des inputs sélectionnés */
 input[type="radio"]:checked + label,
 input[type="checkbox"]:checked + label {
     background-color: #80bfff;
@@ -113,31 +114,24 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button[type="submit"]:hover {
     background-color: #66a3ff;
 }
+/* Champ nombre */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    form {
-        width: 90%;
-    }
-
-    label {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    input[type="text"],
-    select {
-        font-size: 14px;
-    }
-
-    button[type="submit"] {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+input[type="number"]:focus {
+    border-color: #80bfff;
+    outline: none;
 }
