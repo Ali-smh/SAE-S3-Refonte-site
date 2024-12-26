@@ -1,25 +1,23 @@
 <?php
 require_once "fonctions.php";
 
-// Gestion du formulaire de création de compte
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $nom = trim($_POST['nom']);
     $prenom = trim($_POST['prenom']);
 
-    // Charge les utilisateurs
+    
     $users = loadUsers();
 
-    // Vérifie si l'utilisateur existe déjà
     if (userExists($email, $users)) {
         $error = "Un compte avec cet email existe déjà.";
     } else {
-        // Crée un nouvel utilisateur et enregistre
+        
         $users[$email] = createUser($email, $password, $nom, $prenom);
         saveUsers($users);
 
-        // Redirection vers la page de connexion
         header("Location: connexion.php");
         exit();
     }
@@ -32,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer un compte</title>
-    <link rel="stylesheet" href="../css/creation.css"> <!-- Lien vers un fichier CSS -->
+    <link rel="stylesheet" href="../css/creation.css">
 </head>
 <body>
 <header class="main-header">
