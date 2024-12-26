@@ -1,15 +1,12 @@
 <?php
 require_once "fonctions.php";
 
-// Gestion du formulaire de connexion
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Charge les utilisateurs
     $users = loadUsers();
 
-    // Vérifie si l'utilisateur existe et le mot de passe est correct
     if (isset($users[$email]) && password_verify($password, $users[$email]['password'])) {
         header("Location: enquete.php");
         exit();
@@ -25,9 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="../css/connexion.css">
-    rel="stylesheet" href="/src/css/acceuil.css">
     <link rel="icon" href="../img/logos/logo_alcool_ecoute.png">
-    <script src="/src/js/partialsLoader.js" defer></script>
+    <script src="../js/partialsLoader.js" defer></script>
 </head>
 <body>
 <header class="main-header">
@@ -49,8 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <?php
         if (isset($error)) {
-            echo "<p class='error-message'>$error</p>";
-        }
+            echo "<p class='error-message'>$error</p>"; }
         ?>
     </section>
 </main>
