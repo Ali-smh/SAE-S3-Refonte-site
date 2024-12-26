@@ -1,4 +1,4 @@
-/* Corps de la page */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,14 +7,12 @@ body {
     color: #333;
 }
 
-/* En-tête principal */
 h1 {
     text-align: center;
     margin-top: 20px;
     color: #333;
 }
 
-/* Barre de progression */
 .progress-bar {
     width: 80%;
     background-color: #e0e0e0;
@@ -34,7 +32,7 @@ h1 {
     transition: width 0.3s ease-in-out;
 }
 
-/* Conteneur principal */
+
 form {
     text-align: center;
     margin: 40px auto;
@@ -46,14 +44,13 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Question */
+
 form p {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Champs de texte et listes déroulantes */
 input[type="text"],
 select {
     width: 100%;
@@ -72,10 +69,10 @@ select:focus {
     outline: none;
 }
 
-/* Styles pour les boutons radio et les checkboxes */
+
 input[type="radio"],
 input[type="checkbox"] {
-    display: none; /* Masque les inputs natifs */
+    display: none; 
 }
 
 label {
@@ -96,7 +93,7 @@ label:hover {
     border-color: #66a3ff;
 }
 
-/* Style des inputs sélectionnés */
+
 input[type="radio"]:checked + label,
 input[type="checkbox"]:checked + label {
     background-color: #80bfff;
@@ -104,7 +101,6 @@ input[type="checkbox"]:checked + label {
     border-color: #80bfff;
 }
 
-/* Bouton Suivant */
 button[type="submit"] {
     background-color: #80bfff;
     color: white;
@@ -120,7 +116,6 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #66a3ff;
 }
-/* Champ nombre */
 input[type="number"] {
     width: 100%;
     padding: 10px;
