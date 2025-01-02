@@ -16,16 +16,10 @@ $questions_personnel = [
         "question" => "Dans quelle région vivez-vous ?",
         "type" => "select",
         "options" => [
-            "Dans la famille en permanence",
-            "Dans la famille avec une solution d'accueil ou des activités en journée",
-            "Dans un logement indépendant",
-            "Dans un habitat inclusif",
-            "Dans un foyer d'accueil médicalisé (FAM)",
-            "Dans une maison d'accueil spécialisée (MAS)",
-            "Dans un foyer de vie ou foyer d'hébergement",
-            "En IME avec internat",
-            "Hospitalisation en psychiatrie",
-            "Autre"
+            "Auvergne Rhône-Alpes", "Bourgogne Franche-Comté", "Bretagne",
+            "Centre-Val de Loire", "Corse", "Grand-Est", "Hauts-de-France",
+            "Ile-de-France", "Normandie", "Nouvelle-Aquitaine", "Occitanie",
+            "Pays de la Loire", "Provence-Alpes-Côte d'Azur", "Je vis à l'étranger"
         ]
     ],
     "lieu_vie" => [
@@ -141,7 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $_SESSION['current_index']++;
     if ($_SESSION['current_index'] >= count($_SESSION['path'])) {
-        // Réinitialiser la session
         session_unset();
         session_destroy();
         session_start();
