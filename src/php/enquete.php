@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         session_destroy();
         session_start();
 
-        header("Location: connexion.php");
+        header("Location: /src/html/merci.html");
         exit();
     }
 }
