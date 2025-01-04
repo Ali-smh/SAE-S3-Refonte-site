@@ -1,0 +1,26 @@
+### Inscription John Doe
+POST http://localhost:8000
+Content-Type: application/x-www-form-urlencoded
+
+prenom = John &
+nom = Doe &
+email = john@doe.com &
+password = azerty
+
+### Inscription jane Doe
+POST http://localhost:8000
+Content-Type: application/x-www-form-urlencoded
+
+prenom = Jane &
+nom = Doe &
+email = jane@doe.com &
+password = qwerty
+
+### Inscription Mario Bros
+POST http://localhost:8000
+Content-Type: application/x-www-form-urlencoded
+
+prenom = Mario &
+nom = Bros &
+email = mario@nintendo.com &
+password = 1234

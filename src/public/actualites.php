@@ -1,27 +1,39 @@
+<?php
+if(!session_id())
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Acceuil</title>
-    <link rel="stylesheet" href="/src/css/acceuil.css">
-    <link rel="icon" href="/src/img/logos/logo_alcool_ecoute.png">
+
+    <link rel="stylesheet" href="css/accueil.css">
+    <link rel="stylesheet" href ="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/actualites.css">
+
+    <link rel="icon" href="img/logos/logo_alcool_ecoute.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ledger&display=swap" rel="stylesheet">
-    <script src="../js/partialsLoader.js" defer></script>
-    <link rel="stylesheet" href="/src/css/actualites.css">
-    <script src="/src/js/script.js" defer></script>
-    <script src="/src/js/carousel.js" defer></script>
-    <script src="/src/js/detailActu.js" defer></script>
+
+    <script src="js/script.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/detailActu.js" defer></script>
 
     <script src="https://kit.fontawesome.com/9e2d0b6ebd.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<header></header>
+<?php
+require_once 'header.php';
+?>
 
 <section class="tabs">
     <a href="#" class="tab active" id="actualite-tab">Actualité à la Une</a>
@@ -38,15 +50,15 @@
             <button class="prev-btn">❮</button>
             <div class="cards main-cards">
                 <div class="card" data-description="Détails sur la recherche de bénévoles">
-                    <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
+                    <img src="img/benevole.jpg" alt="A la recherche de bénévole">
                     <h3>A LA RECHERCHE DE BENEVOLE</h3>
                 </div>
                 <div class="card" data-description="Détails sur les nouveaux partenariats">
-                    <img src="/src/img/partenariats.jpg" alt="De nouveaux partenariats">
+                    <img src="img/partenariats.jpg" alt="De nouveaux partenariats">
                     <h3>DE NOUVEAUX PARTENARIATS</h3>
                 </div>
                 <div class="card" data-description="Détails sur le changement de président">
-                    <img src="/src/img/president.jpg" alt="Changement de président">
+                    <img src="img/president.jpg" alt="Changement de président">
                     <h3>CHANGEMENT DE PRESIDENT</h3>
                 </div>
             </div>
@@ -56,11 +68,11 @@
         <section class="cardssecondaire">
             <div class="cards secondary-cards">
                 <div class="card" data-description="Détails supplémentaires sur le changement de président">
-                    <img src="/src/img/president.jpg" alt="Changement de président">
+                    <img src="img/president.jpg" alt="Changement de président">
                     <h3>CHANGEMENT DE PRESIDENT</h3>
                 </div>
                 <div class="card" data-description="Appel à de nouveaux bénévoles pour l'association">
-                    <img src="/src/img/benevole.jpg" alt="A la recherche de bénévole">
+                    <img src="img/benevole.jpg" alt="A la recherche de bénévole">
                     <h3>A LA RECHERCHE DE BENEVOLE</h3>
                 </div>
             </div>
@@ -106,9 +118,9 @@
     </div>
 </section>
 
-
-
-<footer> </footer>
+<?php
+require_once 'footer.php';
+?>
 
 </body>
 </html>

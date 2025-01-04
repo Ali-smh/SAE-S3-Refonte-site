@@ -56,7 +56,7 @@ button{
     width: 15em;
     height: 14em;
     z-index: 2;
-    background-image: url("/src/img/pexels-anete-lusina-5238425.jpg");
+    background-image: url("/img/pexels-anete-lusina-5238425.jpg");
     background-size: cover;
 }
 
@@ -65,7 +65,7 @@ button{
     margin-top: -10em;
     height: 18em;
     width: 18em;
-    background-image: url("/src/img/pexels-bohlemedia-1089930.jpg");
+    background-image: url("/img/pexels-bohlemedia-1089930.jpg");
     background-size: 100%;
 }
 
@@ -157,7 +157,7 @@ button{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-image: url(/src/img/pexels-rickyrecap-1654698.jpg);
+    background-image: url("/img/pexels-rickyrecap-1654698.jpg");
 }
 
 .why-dialogue{

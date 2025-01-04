@@ -51,7 +51,7 @@ button{
 .right{
     background-size: cover;
     background-position: center;
-    background-image: url("/src/img/pexels-ingo-609771.jpg");
+    background-image: url("/img/pexels-ingo-609771.jpg");
     height: 100%;
     width: 46%;
 }
@@ -139,7 +139,7 @@ button{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-image: url("/src/img/pexels-vividcafe.jpg");
+    background-image: url("/img/pexels-vividcafe.JPG");
     padding-top: 3em;
     padding-bottom: 3em;
 }
@@ -235,15 +235,15 @@ button{
 }
 
 #actu-1 .img{
-    background-image: url("/src/img/pexels-fauxels-3184418.jpg");
+    background-image: url("/img/pexels-fauxels-3184418.jpg");
 }
 
 #actu-2 .img{
-    background-image: url("/src/img/pexels-didsss-2675061.jpg");
+    background-image: url("/img/pexels-didsss-2675061.jpg");
 }
 
 #actu-3 .img{
-    background-image: url("/src/img/pexels-benni-fish-40038242-12418421.jpg");
+    background-image: url("/img/pexels-benni-fish-40038242-12418421.jpg");
 }
 
 .more-news{

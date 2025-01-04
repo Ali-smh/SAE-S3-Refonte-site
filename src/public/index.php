@@ -1,0 +1,147 @@
+<?php
+if(!session_id())
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="css/accueil.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="icon" href="/img/logos/logo_alcool_ecoute.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ledger&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/9e2d0b6ebd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<?php
+    require_once 'header.php';
+?>
+
+<div class="slogan">
+    <div class="left">
+        <div class="content">
+            <h1 class="title">Ensemble pour une vie meilleure</h1>
+            <p>Grâce à la prévention, à une écoute bienveillante et à
+                un accompagnement joyeux, nous aidons chacun à
+                retrouver la santé et à  vivre une vie meilleure, loin de l’alcool.
+            </p>
+            <button class="learn-more">En savoir plus</button>
+        </div>
+    </div>
+    <div class="right">
+    </div>
+</div>
+
+<div class="presentation">
+    <div class="who-are-we">
+        <div class="content">
+            <h2 class="title">Qui somme nous ?</h2>
+            <p>Nous sommes Alcool Écoute, une fédération engagée depuis les années
+                1960 dans le soutien des personnes en quête de sobriété. Grâce à nos associations
+                locales, nous offrons un accompagnement personnalisé pour une vie plus saine et
+                joyeuse sans alcool.
+            </p>
+            <a class="learn-more">lire plus</a>
+        </div>
+    </div>
+    <div class="what-we-do">
+        <div class="content">
+            <h2 class="title">Ce que nous faisons</h2>
+            <p>Chez Alcool Écoute, nous sensibilisons et formons
+                pour accompagner ceux touchés par l'alcoolisme.
+                Nous publions le journal Mieux Être, participons à des forums,
+                et intervenons dans des écoles et entreprises. Grâce à
+                des partenariats avec des professionnels de santé, nous
+                renforçons notre engagement pour une société mieux informée.
+            </p>
+            <a class="learn-more">lire plus</a>
+        </div>
+    </div>
+</div>
+
+<div class="nos-associations">
+    <div class="content">
+        <h2 class="title">Nos associations</h2>
+        <p>Nos associations sont au cœur d'Alcool Écoute,
+            offrant écoute et soutien local aux personnes touchées par
+            l'alcoolisme. Découvrez la liste de nos associations pour trouver
+            l'association la plus proche de chez vous</p>
+        <button class="discover">Découvrir</button>
+    </div>
+</div>
+
+<div class="actualites">
+    <h2 class="title">Actualités</h2>
+    <div class="content">
+        <div id="actu-1" class="actu">
+            <div class="img">
+            </div>
+            <div class="description">
+                <p class="title">
+                    NOUVEAU PROGRAMME DE SOUTIENT
+                </p>
+                <p class="text">Nous sommes fiers d'annoncer le lancement d'un
+                    nouveau programme de soutien destiné aux personnes
+                    en sevrage. Ce programme propose des ateliers de groupe
+                    et des sessions individuelles pour favoriser  l'écoute et
+                    le partage d'expérience</p>
+            </div>
+        </div>
+        <div id="actu-2" class="actu">
+            <div class="img">
+
+            </div>
+            <div class="description">
+                <p class="title">
+                    PARTENARIAT AVEC DES ETABLISSEMENTS SCOLAIRES
+                </p>
+                <p class="text">
+                    Dans le cadre de nos actions de prévention,
+                    nous avons établi un partenariat avec
+                    plusieurs établissements scolaires pour
+                    sensibiliser les jeunes aux dangers de
+                    l'alcool. Des interventions et des ateliers
+                    seront organisés tout au long de l'année
+                </p>
+            </div>
+        </div>
+        <div id="actu-3" class="actu">
+            <div class="img">
+
+            </div>
+            <div class="description">
+                <p class="title">
+                    ALCOOL ECOUTE AU FORUM NATIONAL DE LA SANTE
+                </p>
+                <p class="text">
+                    Nous avons participé récemment au Forum
+                    National de la Santé, où nous avons partagé
+                    nos initiatives et échangé des bonnes
+                    pratiques avec d'autres associations. Notre
+                    objectif : améliorer le soutien aux personnes
+                    touchées par l'alcoolisme.
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="more-news">Plus d'Actualités</button>
+</div>
+
+<?php
+    require_once 'footer.php';
+?>
+
+</body>
+
+</html>
