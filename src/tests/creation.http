@@ -1,5 +1,5 @@
 ### Inscription John Doe
-POST http://localhost:8000
+POST http://localhost:8000/creation.php
 Content-Type: application/x-www-form-urlencoded
 
 prenom = John &
@@ -8,7 +8,7 @@ email = john@doe.com &
 password = azerty
 
 ### Inscription jane Doe
-POST http://localhost:8000
+POST http://localhost:8000/creation.php
 Content-Type: application/x-www-form-urlencoded
 
 prenom = Jane &
@@ -17,7 +17,7 @@ email = jane@doe.com &
 password = qwerty
 
 ### Inscription Mario Bros
-POST http://localhost:8000
+POST http://localhost:8000/creation.php
 Content-Type: application/x-www-form-urlencoded
 
 prenom = Mario &

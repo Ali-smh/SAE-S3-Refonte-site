@@ -1,19 +1,19 @@
 ### Connexion John Doe
-POST http://localhost:8000
+POST http://localhost:8000/connexion.php
 Content-Type: application/x-www-form-urlencoded
 
 email = john@doe.com &
 password = azerty
 
 ### Connexion jane Doe
-POST http://localhost:8000
+POST http://localhost:8000/connexion.php
 Content-Type: application/x-www-form-urlencoded
 
 email = jane@doe.com &
 password = qwerty
 
 ### Connexion Mario Bros
-POST http://localhost:8000
+POST http://localhost:8000/connexion.php
 Content-Type: application/x-www-form-urlencoded
 
 email = mario@nintendo.com &
@@ -21,7 +21,7 @@ password = 1234
 
 
 ### Fail Connexion Mario Bros
-POST http://localhost:8000
+POST http://localhost:8000/connexion.php
 Content-Type: application/x-www-form-urlencoded
 
 email = mario@nintendo.com &
