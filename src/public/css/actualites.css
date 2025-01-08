@@ -11,7 +11,7 @@ body {
 
 .tabs {
     position: sticky;
-    top: 60px;
+    top: 93px;
     z-index: 999;
     background-color: #80bfff;
     padding: 10px 0;
@@ -78,23 +78,36 @@ body {
 
 .card {
     background-color: white;
-    width: 240px;
+    width: 300px;
+    height: 400px; /* Hauteur fixe pour uniformiser */
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Positionner le contenu vers le haut */
+    gap: 10px;
 }
 
 .card img {
     max-width: 100%;
+    height: 200px; /* Plus d'espace pour l'image */
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .card h3 {
-    margin: 15px 0;
+    margin: 10px 0;
     color: #007BFF;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Permettre le retour à la ligne */
+    display: block;
+    line-height: 1.5; /* Ajuster l'espacement entre les lignes */
 }
 
 .prev-btn, .next-btn {
@@ -110,8 +123,13 @@ body {
 }
 
 .cardssecondaire .card {
-    width: 170px;
-    margin-bottom: 40px;
+    width: 220px; /* Cards secondaires plus petites */
+    height: 320px; /* Réduction de la hauteur */
+    padding: 14px;
+}
+
+.cardssecondaire .card img {
+    height: 160px; /* Plus d'espace pour l'image dans les cards secondaires */
 }
 
 .modal {
@@ -132,7 +150,35 @@ body {
     width: 80%;
     max-width: 500px;
     border-radius: 8px;
+    text-align: center; /* Centrer le contenu */
 }
+
+.modal-content h2 {
+    color: #007BFF; /* Couleur bleue pour le titre */
+    font-size: 1.8rem; /* Taille du titre */
+    font-weight: bold;
+    margin-bottom: 20px; /* Espace entre le titre et le texte */
+    text-align: center; /* Centrer le titre */
+}
+
+.modal-content p {
+    margin-top: 20px;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6; /* Espacement entre les lignes du texte */
+    text-align: justify; /* Justifier le texte */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
 
 .close-btn {
     color: #aaa;
