@@ -45,12 +45,14 @@ require_once 'header.php';
 
 <main class="main-content">
     <section class="form-section">
-        <h1>Connexion</h1>
+        <img src="/src/public/img/logos/logo_alcool_ecoute.png" alt="Logo Alcool Écoute" class="form-logo">
+        <h1>Connectez-vous à votre espace Alcool Écoute Joie & Santé</h1>
+
         <form action="" method="POST" class="form-container">
-            <label for="email">Email :</label>
+            <label for="email"> <img src="/src/public/img/mail.png">Email :</label>
             <input type="email" id="email" name="email" required class="form-input">
 
-            <label for="password">Mot de passe :</label>
+            <label for="password"> <img src="/src/public/img/mdp.webp">Mot de passe :</label>
             <input type="password" id="password" name="password" required class="form-input">
 
             <button type="submit" class="form-button">Se connecter</button>
