@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 80px); 
+    height: calc(100vh - 80px);
     background-color: #ffffff;
 }
 
@@ -19,7 +19,8 @@ body {
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 600px;
+    height: 600px;
     text-align: center;
 }
 
@@ -56,18 +57,41 @@ body {
     background-color: #66a3ff; 
 }
 
-.error-message {
-    color: red;
-    margin-top: 15px;
+label img {
+    width: 20px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px; /* Espace entre l'image et le texte */
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Assurez-vous que la taille du texte est cohérente */
+    gap: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF; /* Bleu pour attirer l'attention */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #1eba20;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 
-.main-footer {
-    background-color: #80bfff;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.error-message {
+    color: red;
+    margin-top: 15px;
 }
