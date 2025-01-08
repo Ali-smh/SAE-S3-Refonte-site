@@ -105,6 +105,9 @@ Ces initiatives visent à créer un espace bienveillant et motivant, où chacun 
 
 
 <section class="events-section">
+    <div class="events-title">
+        <h1>Événements</h1>
+    </div>
     <div class="events">
         <div class="event">
             <div class="year">2025</div>
