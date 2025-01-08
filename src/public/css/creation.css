@@ -95,3 +95,18 @@ body {
     bottom: 0;
     width: 100%;
 }
+
+
+label img {
+    width: 20px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px; /* Espace entre l'image et le texte */
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Assurez-vous que la taille du texte est cohérente */
+    gap: 10px;
+}
