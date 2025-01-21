@@ -9,7 +9,7 @@ if(!session_id())
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merci pour votre participation</title>
-    <link rel="stylesheet" href="/src/public/css/merci.css">
+    <link rel="stylesheet" href="css/merci.css">
 </head>
 <body>
 
@@ -19,12 +19,12 @@ if(!session_id())
             <h1>Merci pour votre participation !</h1>
             <p>Votre retour est précieux pour nous. Grâce à vos réponses, nous pourrons améliorer nos services et soutenir davantage de personnes dans leur quête de sobriété.</p>
             <div class="buttons">
-                <a href="/src/public/index.php" class="btn-primary">Retour à l'accueil</a>
-                <a href="/src/html/politique_confidentialite.html" class="btn-secondary">Consultez notre politique de confidentialité</a>
+                <a href="index.php" class="btn-primary">Retour à l'accueil</a>
+                <a href="#" class="btn-secondary">Consultez notre politique de confidentialité</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="/src/public/img/thank-you.png" alt="Merci pour votre participation">
+            <img src="img/thank-you.png" alt="Merci pour votre participation">
         </div>
     </section>
 

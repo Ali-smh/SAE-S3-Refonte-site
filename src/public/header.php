@@ -1,5 +1,4 @@
 <header>
-    <i class="fa-solid fa-bars"></i>
     <a href="index.php"><img alt="" class="logo" src="img/logos/logo_alcool_ecoute.png"></a>
     <div class="navbar">
         <ul>
@@ -12,9 +11,14 @@
             <li><a href="#">Contact</a></li>
             <?php if (!isset($_SESSION['user'])): ?>
                 <li><a href="connexion.php">Se connecter</a></li>
-            <?php else: ?>
+            <?php else:?>
+                <?php if ($_SESSION['type'] == 'Administrateur'): ?>
+                <li><a href="indicateurs.php">Indicateurs</a></li>
+                <li><a href="deconnexion.php">Se déconnecter</a></li>
+                <?php else: ?>
                 <li><a href="enquete.php">Enquete</a></li>
                 <li><a href="deconnexion.php">Se déconnecter</a></li>
+                <?php endif; ?>
             <?php endif; ?>
         </ul>
     </div>

@@ -28,8 +28,6 @@ header{
 }
 
 .fa-bars {
-    margin-left: 1em;
-    font-size: 2em;
     display: none;
 }
 
@@ -44,10 +42,6 @@ header{
 
     .navbar{
         display: none;
-    }
-
-    .fa-bars {
-        display:block;
     }
 
     .fa-magnifying-glass{

@@ -1,107 +1,31 @@
 <?php
-session_start();
+require_once '../app/fonctions.php';
 
-$questions_personnel = [
-    "age" => [
-        "question" => "Quel âge avez vous ?",
-        "type" => "text",
-        "placeholder" => "Entrez votre âge"
-    ],
-    "vie_pro" => [
-        "question" => "L’alcool a-t-il un impact sur votre vie professionnelle ?",
-        "type" => "radio",
-        "options" => ["Oui, fortement", "Oui, légèrement", "Non"]
-    ],
-    "region" => [
-        "question" => "Dans quelle région vivez-vous ?",
-        "type" => "select",
-        "options" => [
-            "Auvergne Rhône-Alpes", "Bourgogne Franche-Comté", "Bretagne",
-            "Centre-Val de Loire", "Corse", "Grand-Est", "Hauts-de-France",
-            "Ile-de-France", "Normandie", "Nouvelle-Aquitaine", "Occitanie",
-            "Pays de la Loire", "Provence-Alpes-Côte d'Azur", "Je vis à l'étranger"
-        ]
-    ],
-    "lieu_vie" => [
-        "question" => "Quel est votre lieu de vie actuel ?",
-        "type" => "select",
-        "options" => [
-            "Dans la famille en permanence", "Logement indépendant", "Foyer d'accueil médicalisé (FAM)",
-            "Maison d'accueil spécialisée (MAS)", "Hospitalisation en psychiatrie", "Autre"
-        ]
-    ],
-    "qualite_vie" => [
-        "question" => "Quels aspects impactent votre qualité de vie ?",
-        "type" => "checkbox",
-        "options" => ["Santé physique", "Santé mentale (dépression, anxiété…)", "Relations familiales",
-            "Vie sociale", "Finances", "Emploi ou études", "Aucun impact"]
-    ],
-    "soutien" => [
-        "question" => "De quel type de soutien avez-vous besoin ?",
-        "type" => "radio",
-        "options" => [
-            "Aide psychologique (écoute, thérapie, groupe de parole)",
-            "Aide médicale (consultations, traitement)",
-            "Aide sociale (logement, finances, démarches administratives)",
-            "Accompagnement dans la réinsertion professionnelle ou sociale",
-            "Aucun, je me sens autonome"
-        ]
-    ]
-];
+if (!session_id())
+    session_start();
 
-$questions_proche = [
-    "age" => [
-        "question" => "Quel âge a votre proche ?",
-        "type" => "text",
-        "placeholder" => "Entrez votre âge"
-    ],
-    "vie_pro_proche" => [
-        "question" => "L’alcool a-t-il un impact sur la vie professionnelle de votre proche ?",
-        "type" => "radio",
-        "options" => ["Oui, fortement", "Oui, légèrement", "Non"]
-    ],
-    "region" => [
-        "question" => "Dans quelle région vie votre proche ?",
-        "type" => "select",
-        "options" => ["Auvergne Rhône-Alpes", "Bourgogne Franche-Comté", "Bretagne", "Centre-Val de Loire",
-            "Corse", "Grand-Est", "Hauts-de-France", "Ile-de-France", "Normandie", "Nouvelle-Aquitaine",
-            "Occitanie", "Pays de la Loire", "Provence-Alpes-Côte d'Azur", "Je vis à l'étranger"]
-    ],
-    "lieu_vie" => [
-        "question" => "Quel est son lieu de vie actuel ?",
-        "type" => "select",
-        "options" => [
-            "Dans la famille en permanence",
-            "Dans la famille avec une solution d'accueil ou des activités en journée",
-            "Dans un logement indépendant",
-            "Dans un habitat inclusif",
-            "Dans un foyer d'accueil médicalisé (FAM)",
-            "Dans une maison d'accueil spécialisée (MAS)",
-            "Dans un foyer de vie ou foyer d'hébergement",
-            "En IME avec internat",
-            "Hospitalisation en psychiatrie",
-            "Autre"
-        ]
-    ],
-    "qualite_vie" => [
-        "question" => "Quels aspects impactent sa qualité de vie ?",
-        "type" => "checkbox",
-        "options" => ["Santé physique", "Santé mentale (dépression, anxiété…)", "Relations familiales",
-            "Vie sociale", "Finances", "Emploi ou études", "Aucun impact"]
-    ],
-    "soutien" => [
-        "question" => "De quel type de soutien a-t-il besoin ?",
-        "type" => "radio",
-        "options" => [
-            "Aide psychologique (écoute, thérapie, groupe de parole)",
-            "Aide médicale (consultations, traitement)",
-            "Aide sociale (logement, finances, démarches administratives)",
-            "Accompagnement dans la réinsertion professionnelle ou sociale",
-            "Aucun, je me sens autonome"
-        ]
-    ]
-];
+$host = 'localhost';
+$dbname = 'enquete_alcool_ecoute';
+$username = 'root';
+$password = 'soumah123';
+$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
 
+// Connexion à la base de données
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // Debugging avancé
+} catch (PDOException $e) {
+    die("Échec de la connexion à la base de données : " . $e->getMessage());
+}
+
+$adherentId = getAdherentIdByEmail($pdo, $_SESSION['user']);
+
+// Récupération des questions
+$questions_personnel = getQuestions($pdo, 'Personnel');
+$questions_proche = getQuestions($pdo, 'Proche');
+
+// Initialisation des variables de session
 if (!isset($_SESSION['responses'])) {
     $_SESSION['responses'] = [];
     $_SESSION['current_index'] = 0;
@@ -118,37 +42,56 @@ if (!isset($_SESSION['responses'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
+    // Récupération de la clé de la question actuelle
     $keys = array_keys($_SESSION['path']);
     $current_question_key = $keys[$_SESSION['current_index']];
-    $_SESSION['responses'][$current_question_key] = $_POST['response'] ?? [];
 
+    // Enregistrement de la réponse
+    if (isset($_POST['responses']) && is_array($_POST['responses'])) {
+        // Réponses multiples (checkboxes)
+        $_SESSION['responses'][$current_question_key] = $_POST['responses'];
+    } else {
+        // Réponse unique
+        $_SESSION['responses'][$current_question_key] = $_POST['response'] ?? null;
+    }
 
+    // Chemin de progression après la question "relation_alcool"
     if ($current_question_key === "relation_alcool") {
         if ($_POST['response'] === "Je suis personnellement concerné(e)") {
             $_SESSION['path'] = array_merge($_SESSION['path'], $questions_personnel);
+            $_SESSION['categorie'] = 'Personnel';
         } elseif ($_POST['response'] === "Un membre de ma famille ou un proche est concerné") {
             $_SESSION['path'] = array_merge($_SESSION['path'], $questions_proche);
+            $_SESSION['categorie'] = 'Proche';
         }
     }
 
-
+    // Avancer à la question suivante
     $_SESSION['current_index']++;
+
+    // Si toutes les questions ont été répondues
     if ($_SESSION['current_index'] >= count($_SESSION['path'])) {
+        if ($_SESSION['categorie'] == 'Personnel') {
+            saveResponses($pdo, $_SESSION['responses'], $adherentId, 'Personnel');
+        } else {
+            saveResponses($pdo, $_SESSION['responses'], $adherentId, 'Proche');
+        }
+
+        // Réinitialisation de la session et redirection
         session_unset();
         session_destroy();
         session_start();
-
-        header("Location: /src/php/merci.php");
-        exit();
+        header("Location: merci.php");
+        exit;
     }
 }
 
-
+// Préparation de la question actuelle
 $keys = array_keys($_SESSION['path']);
 $current_question_key = $keys[$_SESSION['current_index']];
 $current_question = $_SESSION['path'][$current_question_key];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -162,44 +105,48 @@ $current_question = $_SESSION['path'][$current_question_key];
 <body>
 <h1>Enquête - Alcool Écoute Joie et Santé</h1>
 
-<div class="progress-bar">
-    <div class="progress-bar-inner" style="width: <?= round($_SESSION['current_index'] / count($_SESSION['path']) * 100) ?>%;">
-        <?= round($_SESSION['current_index'] / count($_SESSION['path']) * 100) ?>%
+<?php if (hasAlreadyResponded($pdo, $adherentId)):?>
+    <p>Vous avez déjà répondu à ce questionnaire. Merci pour votre participation.</p>
+<?php else: ?>
+    <div class="progress-bar">
+        <div class="progress-bar-inner" style="width: <?= round($_SESSION['current_index'] / count($_SESSION['path']) * 100) ?>%;">
+            <?= round($_SESSION['current_index'] / count($_SESSION['path']) * 100) ?>%
+        </div>
     </div>
-</div>
 
-<form method="POST">
-    <p><?= htmlspecialchars($current_question['question']) ?></p>
-    <!-- Boutons radio -->
-    <?php if ($current_question['type'] === "radio"): ?>
-        <?php foreach ($current_question['options'] as $index => $option): ?>
-            <div class="form-option">
-                <input type="radio" id="option-<?= $index ?>" name="response" value="<?= htmlspecialchars($option) ?>" required>
-                <label for="option-<?= $index ?>"><?= htmlspecialchars($option) ?></label>
-            </div>
-        <?php endforeach; ?>
-        <!-- choix age -->
-    <?php elseif ($current_question['type'] === "text"): ?>
-        <input type="number" name="response" placeholder="<?= htmlspecialchars($current_question['placeholder']) ?>" required min="0">
-        <!-- Liste deroulante -->
-    <?php elseif ($current_question['type'] === "select"): ?>
-        <select name="response" required>
-            <?php foreach ($current_question['options'] as $option): ?>
-                <option value="<?= htmlspecialchars($option) ?>"><?= htmlspecialchars($option) ?></option>
+    <form method="POST">
+        <p><?= htmlspecialchars($current_question['question']) ?></p>
+        <!-- Boutons radio -->
+        <?php if ($current_question['type'] === "radio"): ?>
+            <?php foreach ($current_question['options'] as $index => $option): ?>
+                <div class="form-option">
+                    <input type="radio" id="option-<?= $index ?>" name="response" value="<?= htmlspecialchars($option) ?>" required>
+                    <label for="option-<?= $index ?>"><?= htmlspecialchars($option) ?></label>
+                </div>
             <?php endforeach; ?>
-        </select>
-        <!-- Cases à cocher -->
-    <?php elseif ($current_question['type'] === "checkbox"): ?>
-        <?php foreach ($current_question['options'] as $index => $option): ?>
-            <div class="form-option">
-                <input type="checkbox" id="checkbox-<?= $index ?>" name="responses[]" value="<?= htmlspecialchars($option) ?>">
-                <label for="checkbox-<?= $index ?>"><?= htmlspecialchars($option) ?></label>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+            <!-- choix age -->
+        <?php elseif ($current_question['type'] === "text"): ?>
+            <input type="number" name="response" placeholder="<?= htmlspecialchars($current_question['placeholder']) ?>" required min="0">
+            <!-- Liste deroulante -->
+        <?php elseif ($current_question['type'] === "select"): ?>
+            <select name="response" required>
+                <?php foreach ($current_question['options'] as $option): ?>
+                    <option value="<?= htmlspecialchars($option) ?>"><?= htmlspecialchars($option) ?></option>
+                <?php endforeach; ?>
+            </select>
+            <!-- Cases à cocher -->
+        <?php elseif ($current_question['type'] === "checkbox"): ?>
+            <?php foreach ($current_question['options'] as $index => $option): ?>
+                <div class="form-option">
+                    <input type="checkbox" id="checkbox-<?= $index ?>" name="responses[]" value="<?= htmlspecialchars($option) ?>">
+                    <label for="checkbox-<?= $index ?>"><?= htmlspecialchars($option) ?></label>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
-    <button type="submit">Suivant</button>
-</form>
+        <button type="submit">Suivant</button>
+    </form>
+<?php endif; ?>
 
 </body>
 </html>
